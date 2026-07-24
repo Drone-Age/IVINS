@@ -1,0 +1,3 @@
+[submodule "components/VINS-NEO"]
+	path = components/VINS-NEO
+	url = https://github.com/Drone-Age/VINS-NEO.git

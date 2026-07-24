@@ -8,6 +8,10 @@ INDRA VINS — система візуально-інерціальної нав
 - [VINS-NEO](components/VINS-NEO) — ключовий програмний компонент на базі
   ROS 2 Jazzy для Ubuntu 24.04. Компонент підключено як Git submodule, тому
   головний репозиторій фіксує перевірену версію його вихідного коду.
+- [IROS2-Jazzy](components/IROS2-Jazzy) — відтворювана збірка та пакування
+  ROS 2 Jazzy для Raspberry Pi 5 з Debian 13 ARM64. Build host: Windows 11
+  із Docker Desktop; кінцевий результат: нативний Debian-пакет без Docker
+  dependency на цільовому обладнанні.
 
 ## Отримання проєкту
 

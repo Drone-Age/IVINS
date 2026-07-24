@@ -1,3 +1,6 @@
 [submodule "components/VINS-NEO"]
 	path = components/VINS-NEO
 	url = https://github.com/Drone-Age/VINS-NEO.git
+[submodule "components/IROS2-Jazzy"]
+	path = components/IROS2-Jazzy
+	url = https://github.com/Drone-Age/iros2-jazzy.git

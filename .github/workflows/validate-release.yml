@@ -1,0 +1,21 @@
+name: Validate iVINS release metadata
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  metadata:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/validate-release.py manifests/ivins-1.0.0.0.json
+      - run: python3 -m unittest discover -s tests -v

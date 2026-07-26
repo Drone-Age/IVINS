@@ -4,3 +4,6 @@
 [submodule "components/IROS2_0"]
 	path = components/IROS2_0
 	url = https://github.com/Drone-Age/iros2_0.git
+[submodule "components/iMAVROS-release"]
+	path = components/iMAVROS-release
+	url = https://github.com/Drone-Age/iMAVROS-release.git

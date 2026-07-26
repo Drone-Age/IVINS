@@ -1,0 +1,10 @@
+Package: ivins
+Version: @VERSION@
+Section: robotics
+Priority: optional
+Architecture: arm64
+Maintainer: Drone Age
+Depends: iros2-0 (= @IROS2_VERSION@), imavros (= @IMAVROS_VERSION@), vins-mono-ros2 (= @VINS_VERSION@)
+Description: INDRA Visual-Inertial Navigation System
+ Product meta-package that installs an exactly pinned and release-gated
+ IROS2_0, iMAVROS and VINS-NEO runtime set for Debian 13 ARM64.

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "release": {
+    "name": "ivins",
+    "version": "1.0.0.0",
+    "debian_version": "1.0.0.0-1+deb13",
+    "tag": "v1.0.0.0",
+    "status": "draft"
+  },
+  "platform": {
+    "distribution": "debian",
+    "release": "13",
+    "codename": "trixie",
+    "architecture": "arm64",
+    "native_machine": "aarch64",
+    "device": "Raspberry Pi 5",
+    "ros_distribution": "jazzy"
+  },
+  "components": {
+    "iros2": {
+      "path": "components/IROS2_0",
+      "repository": "https://github.com/Drone-Age/iros2_0.git",
+      "commit": "290eabe293289547e97dd07d967a24f25bbc81d6",
+      "tag": "v0.1.2",
+      "package": "iros2-0",
+      "debian_version": "0.1.2-1+deb13",
+      "artifact": {
+        "filename": "iros2-0_0.1.2-1+deb13_arm64.deb",
+        "url": "https://github.com/Drone-Age/iros2_0/releases/download/v0.1.2/iros2-0_0.1.2-1+deb13_arm64.deb",
+        "sha256": "96033cd5c1b8b09e92841d4f6693109699f5a961772a1fa13e91027d70c11a93"
+      }
+    },
+    "imavros": {
+      "path": "components/iMAVROS-release",
+      "repository": "https://github.com/Drone-Age/iMAVROS-release.git",
+      "commit": "6a0c4a5fe0028e3d5d5091a7518509b470516d52",
+      "tag": null,
+      "package": "imavros",
+      "debian_version": "1.0.0.0-1+deb13",
+      "artifact": {
+        "filename": "imavros_1.0.0.0-1+deb13_arm64.deb",
+        "url": null,
+        "sha256": null
+      }
+    },
+    "vins": {
+      "path": "components/VINS-NEO",
+      "repository": "https://github.com/Drone-Age/VINS-NEO.git",
+      "commit": "69a1a747db5a88b8db2b348d90ca3051b35fdeb2",
+      "tag": "v1_00_02_00",
+      "package": "vins-mono-ros2",
+      "debian_version": "1.0.2.0",
+      "artifact": {
+        "filename": "vins-mono-ros2_1.0.2.0_arm64.deb",
+        "url": null,
+        "sha256": null
+      }
+    }
+  },
+  "artifacts": {
+    "meta_package": {
+      "package": "ivins",
+      "filename": "ivins_1.0.0.0-1+deb13_arm64.deb",
+      "sha256": null
+    },
+    "offline_bundle": {
+      "filename": "ivins_1.0.0.0-1+deb13_arm64.tar.zst",
+      "sha256": null
+    }
+  },
+  "gates": {
+    "metadata": null,
+    "component_native": {
+      "iros2": null,
+      "imavros": null,
+      "vins": null
+    },
+    "package_audit": null,
+    "clean_install": null,
+    "ros_smoke": null,
+    "dataset": null,
+    "post_release": null
+  }
+}

@@ -32,6 +32,7 @@ class ReleaseManifestTests(unittest.TestCase):
         manifest = copy.deepcopy(self.manifest)
         manifest["release"]["status"] = "draft"
         manifest["gates"]["metadata"] = None
+        manifest["gates"]["component_native"]["vins"] = None
         errors = MODULE.validate(manifest, released=True)
         self.assertIn("--released requires release.status=released", errors)
         self.assertTrue(any("native gate" in error for error in errors))

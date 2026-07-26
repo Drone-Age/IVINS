@@ -34,9 +34,12 @@ sed \
   -e "s/@IMAVROS_VERSION@/${imavros_version}/g" \
   -e "s/@VINS_VERSION@/${vins_version}/g" \
   "${repo_root}/packaging/control.in" > "${package_root}/DEBIAN/control"
-install -m 0644 "${manifest}" "${package_root}/usr/share/doc/ivins/release-manifest.json"
+python3 "${repo_root}/scripts/package-manifest.py" \
+  "${manifest}" "${package_root}/usr/share/doc/ivins/release-manifest.json"
 printf 'Installed-Size: %s\n' "$(du -sk "${package_root}" | cut -f1)" \
   >> "${package_root}/DEBIAN/control"
 
-dpkg-deb --root-owner-group --build "${package_root}" "${output_dir}/${filename}"
+find "${package_root}" -exec touch -h -d '@0' {} +
+SOURCE_DATE_EPOCH=0 dpkg-deb --root-owner-group --build \
+  "${package_root}" "${output_dir}/${filename}"
 sha256sum "${output_dir}/${filename}" > "${output_dir}/${filename}.sha256"

@@ -25,5 +25,8 @@ dpkg-deb --contents "${deb}" | grep -q './usr/share/doc/ivins/release-manifest.j
 payload="$(mktemp -d)"
 trap 'rm -rf -- "${payload}"' EXIT
 dpkg-deb --extract "${deb}" "${payload}"
-cmp "${manifest}" "${payload}/usr/share/doc/ivins/release-manifest.json"
+python3 "$(dirname "$0")/package-manifest.py" \
+  "${manifest}" "${payload}/expected-release-manifest.json"
+cmp "${payload}/expected-release-manifest.json" \
+  "${payload}/usr/share/doc/ivins/release-manifest.json"
 echo "iVINS meta-package audit PASSED."

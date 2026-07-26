@@ -19,7 +19,7 @@ class ReleaseManifestTests(unittest.TestCase):
             (ROOT / "manifests" / "ivins-1.0.0.0.json").read_text(encoding="utf-8")
         )
 
-    def test_draft_manifest_matches_gitlinks(self):
+    def test_draft_manifest_is_valid(self):
         self.assertEqual([], MODULE.validate(self.manifest, released=False))
 
     def test_draft_cannot_pass_released_gate(self):
@@ -27,18 +27,17 @@ class ReleaseManifestTests(unittest.TestCase):
         self.assertIn("--released requires release.status=released", errors)
         self.assertTrue(any("native gate" in error for error in errors))
 
-    def test_component_commit_mismatch_is_rejected(self):
-        self.manifest["components"]["vins"]["commit"] = "0" * 40
+    def test_malformed_component_commit_is_rejected(self):
+        self.manifest["components"]["vins"]["commit"] = "not-a-sha"
         errors = MODULE.validate(self.manifest, released=False)
-        self.assertIn(
-            "vins.commit does not match the superproject gitlink", errors
-        )
+        self.assertIn("vins.commit must be a full Git SHA", errors)
 
-    def test_gitlink_reads_checked_out_submodule_commit(self):
-        self.assertEqual(
-            self.manifest["components"]["imavros"]["commit"],
-            MODULE.gitlink("components/iMAVROS-release"),
+    def test_component_repository_mismatch_is_rejected(self):
+        self.manifest["components"]["vins"]["repository"] = (
+            "https://github.com/example/wrong.git"
         )
+        errors = MODULE.validate(self.manifest, released=False)
+        self.assertIn("vins.repository is inconsistent", errors)
 
     def test_unapproved_component_is_rejected(self):
         manifest = copy.deepcopy(self.manifest)

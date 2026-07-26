@@ -6,7 +6,7 @@
 ## 1. Metadata gate
 
 1. `VERSION`, release tag, Debian-версія та ім’я manifest узгоджені.
-2. Gitlink кожного підмодуля дорівнює commit у manifest.
+2. Manifest містить точні repository, commit і immutable tag кожного компонента.
 3. Для кожного компонента зафіксовано immutable tag, package version, artifact
    URL та SHA-256.
 4. Manifest має статус `draft` до завершення всіх перевірок.

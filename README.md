@@ -5,14 +5,13 @@ INDRA VINS — система візуально-інерціальної нав
 
 ## Компоненти
 
-- [VINS-NEO](components/VINS-NEO) — ключовий програмний компонент на базі
-  ROS 2 Jazzy для Ubuntu 24.04. Компонент підключено як Git submodule, тому
-  головний репозиторій фіксує перевірену версію його вихідного коду.
-- [IROS2_0](components/IROS2_0) — відтворювана збірка та пакування
+- [VINS-NEO](https://github.com/Drone-Age/VINS-NEO) — ключовий програмний
+  компонент на базі ROS 2 Jazzy.
+- [IROS2_0](https://github.com/Drone-Age/iros2_0) — відтворювана збірка та пакування
   ROS 2 Jazzy для Raspberry Pi 5 з Debian 13 ARM64. Build host: Windows 11
   із Docker Desktop; кінцевий результат: нативний Debian-пакет без Docker
   dependency на цільовому обладнанні.
-- [iMAVROS-release](components/iMAVROS-release) — інструменти нативної збірки,
+- [iMAVROS-release](https://github.com/Drone-Age/iMAVROS-release) — інструменти нативної збірки,
   перевірки та випуску Debian-пакета iMAVROS для Debian 13 ARM64
   (Raspberry Pi 5).
 
@@ -33,21 +32,16 @@ release bundle містить усі component `.deb`, meta-package, manifest і
 
 ## Отримання проєкту
 
-Клонуйте репозиторій разом із підмодулями:
+Клонуйте кореневий репозиторій звичайним способом:
 
 ```bash
-git clone --recurse-submodules <URL-РЕПОЗИТОРІЮ-INDRA>
+git clone <URL-РЕПОЗИТОРІЮ-INDRA>
 ```
 
-Якщо головний репозиторій уже клоновано:
-
-```bash
-git submodule update --init --recursive
-```
+Компоненти не зберігаються як Git submodules. Їхні точні repository, commit,
+tag, Debian version, artifact URL і SHA-256 зафіксовані в release manifest.
 
 ## Розгортання VINS-NEO
 
 Інструкції зі встановлення, конфігурації, запуску та діагностики містяться у
-[документації VINS-NEO](components/VINS-NEO/docs/README_UK.md). Відтворюване
-розгортання через Docker описано в
-[Docker-посібнику](components/VINS-NEO/docs/DOCKER_UK.md).
+[документації VINS-NEO](https://github.com/Drone-Age/VINS-NEO).

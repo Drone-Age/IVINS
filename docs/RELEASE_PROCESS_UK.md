@@ -5,7 +5,7 @@
 1. Створити release issue з версією, tag, scope і критеріями приймання.
 2. Вибрати лише опубліковані component releases, окрім першого інтеграційного
    draft, де неопублікований компонент явно блокує фінальний release.
-3. Оновити підмодулі до точних release commits.
+3. Зафіксувати точні component repository, release commit і tag у manifest.
 4. Створити `manifests/ivins-<version>.json` і зафіксувати component commits,
    tags, Debian versions, artifact URL та SHA-256.
 5. Оновити `VERSION`, `CHANGELOG.md` і release notes одним change.
@@ -20,8 +20,8 @@ python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
-Після commit команди повторюються для committed snapshot. Gitlink-и та manifest
-мають входити до одного commit.
+Після commit команди повторюються для committed snapshot. Manifest є єдиним
+джерелом pinned component revisions у кореневому репозиторії.
 
 ## 3. Збірка компонентів
 

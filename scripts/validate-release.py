@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate an iVINS product manifest and its pinned submodules."""
+"""Validate an iVINS product release manifest."""
 
 from __future__ import annotations
 
@@ -7,7 +7,6 @@ import argparse
 import hashlib
 import json
 import re
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -19,29 +18,6 @@ DEBIAN_VERSION_RE = re.compile(
 )
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
-
-
-def gitlink(path: str) -> str | None:
-    worktree = subprocess.run(
-        ["git", "-C", path, "rev-parse", "HEAD"],
-        cwd=ROOT,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    worktree_commit = worktree.stdout.strip()
-    if worktree.returncode == 0 and SHA_RE.fullmatch(worktree_commit):
-        return worktree_commit
-
-    result = subprocess.run(
-        ["git", "ls-files", "--stage", "--", path],
-        cwd=ROOT,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    fields = result.stdout.split()
-    return fields[1] if len(fields) >= 2 and fields[0] == "160000" else None
 
 
 def digest(path: Path) -> str:
@@ -89,27 +65,29 @@ def validate(manifest: dict[str, Any], released: bool) -> list[str]:
         require(errors, platform.get(key) == expected, f"platform.{key} must be {expected}")
 
     expected_components = {
-        "iros2": ("components/IROS2_0", "iros2-0"),
-        "imavros": ("components/iMAVROS-release", "imavros"),
-        "vins": ("components/VINS-NEO", "vins-mono-ros2"),
+        "iros2": ("https://github.com/Drone-Age/iros2_0.git", "iros2-0"),
+        "imavros": (
+            "https://github.com/Drone-Age/iMAVROS-release.git",
+            "imavros",
+        ),
+        "vins": ("https://github.com/Drone-Age/VINS-NEO.git", "vins-mono-ros2"),
     }
     require(
         errors,
         set(components) == set(expected_components),
         "components must contain exactly iros2, imavros, and vins",
     )
-    for name, (expected_path, expected_package) in expected_components.items():
+    for name, (expected_repository, expected_package) in expected_components.items():
         component = components.get(name, {})
         commit = component.get("commit", "")
         artifact = component.get("artifact", {})
-        require(errors, component.get("path") == expected_path, f"{name}.path is inconsistent")
-        require(errors, component.get("package") == expected_package, f"{name}.package is inconsistent")
-        require(errors, bool(SHA_RE.fullmatch(commit)), f"{name}.commit must be a full Git SHA")
         require(
             errors,
-            gitlink(expected_path) == commit,
-            f"{name}.commit does not match the superproject gitlink",
+            component.get("repository") == expected_repository,
+            f"{name}.repository is inconsistent",
         )
+        require(errors, component.get("package") == expected_package, f"{name}.package is inconsistent")
+        require(errors, bool(SHA_RE.fullmatch(commit)), f"{name}.commit must be a full Git SHA")
         require(
             errors,
             bool(DEBIAN_VERSION_RE.fullmatch(component.get("debian_version", ""))),

@@ -126,6 +126,16 @@ def validate(manifest: dict[str, Any], released: bool) -> list[str]:
         }.items():
             require(
                 errors,
+                bool(entry.get("url")),
+                f"released manifest requires {name} URL",
+            )
+            require(
+                errors,
+                "/releases/latest/" not in (entry.get("url") or ""),
+                f"released manifest forbids a latest URL for {name}",
+            )
+            require(
+                errors,
                 bool(SHA256_RE.fullmatch(entry.get("sha256") or "")),
                 f"released manifest requires {name} SHA-256",
             )

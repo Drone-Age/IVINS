@@ -2,7 +2,7 @@
 
 All notable product-level changes to iVINS are documented in this file.
 
-## [1.0.0.0] - Unreleased
+## [1.0.0.0] - 2026-07-27
 
 ### Added
 

@@ -11,6 +11,12 @@ SPEC = importlib.util.spec_from_file_location(
 MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader
 SPEC.loader.exec_module(MODULE)
+PACKAGE_SPEC = importlib.util.spec_from_file_location(
+    "package_manifest", ROOT / "scripts" / "package-manifest.py"
+)
+PACKAGE_MODULE = importlib.util.module_from_spec(PACKAGE_SPEC)
+assert PACKAGE_SPEC.loader
+PACKAGE_SPEC.loader.exec_module(PACKAGE_MODULE)
 
 
 class ReleaseManifestTests(unittest.TestCase):
@@ -23,7 +29,10 @@ class ReleaseManifestTests(unittest.TestCase):
         self.assertEqual([], MODULE.validate(self.manifest, released=False))
 
     def test_draft_cannot_pass_released_gate(self):
-        errors = MODULE.validate(self.manifest, released=True)
+        manifest = copy.deepcopy(self.manifest)
+        manifest["release"]["status"] = "draft"
+        manifest["gates"]["metadata"] = None
+        errors = MODULE.validate(manifest, released=True)
         self.assertIn("--released requires release.status=released", errors)
         self.assertTrue(any("native gate" in error for error in errors))
 
@@ -59,6 +68,19 @@ class ReleaseManifestTests(unittest.TestCase):
         errors = MODULE.validate(manifest, released=True)
         self.assertIn(
             "released manifest forbids a latest URL for iros2", errors
+        )
+
+    def test_build_input_projection_breaks_artifact_hash_cycle(self):
+        projected = PACKAGE_MODULE.projection(self.manifest)
+        self.assertEqual("build-input", projected["release"]["status"])
+        self.assertIsNone(projected["artifacts"]["meta_package"]["sha256"])
+        self.assertIsNone(projected["artifacts"]["offline_bundle"]["sha256"])
+        self.assertIsNone(projected["gates"]["metadata"])
+        self.assertTrue(
+            all(
+                value is None
+                for value in projected["gates"]["component_native"].values()
+            )
         )
 
 

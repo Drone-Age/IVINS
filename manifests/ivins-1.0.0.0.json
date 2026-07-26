@@ -5,7 +5,7 @@
     "version": "1.0.0.0",
     "debian_version": "1.0.0.0-1+deb13",
     "tag": "v1.0.0.0",
-    "status": "draft"
+    "status": "released"
   },
   "platform": {
     "distribution": "debian",
@@ -58,24 +58,26 @@
     "meta_package": {
       "package": "ivins",
       "filename": "ivins_1.0.0.0-1+deb13_arm64.deb",
-      "sha256": null
+      "url": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins_1.0.0.0-1%2Bdeb13_arm64.deb",
+      "sha256": "2e1bea2d4fde40b8c2e4c87750e07cb4eef221e06b22daaed65caa62f10ad2ba"
     },
     "offline_bundle": {
       "filename": "ivins_1.0.0.0-1+deb13_arm64.tar.zst",
-      "sha256": null
+      "url": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins_1.0.0.0-1%2Bdeb13_arm64.tar.zst",
+      "sha256": "0b4ce2666dc8a9a1f0c9afbec9ec350bbf8eb385c41923798fef82e2e08861ba"
     }
   },
   "gates": {
-    "metadata": null,
+    "metadata": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
     "component_native": {
-      "iros2": null,
+      "iros2": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
       "imavros": "https://github.com/Drone-Age/iMAVROS-release/releases/download/v1.0.0.1/native-gate.json",
-      "vins": null
+      "vins": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz"
     },
-    "package_audit": null,
-    "clean_install": null,
-    "ros_smoke": null,
-    "dataset": null,
-    "post_release": null
+    "package_audit": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
+    "clean_install": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
+    "ros_smoke": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
+    "dataset": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz",
+    "post_release": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins-1.0.0.0-evidence.tar.gz"
   }
 }

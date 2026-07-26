@@ -33,14 +33,14 @@
     "imavros": {
       "path": "components/iMAVROS-release",
       "repository": "https://github.com/Drone-Age/iMAVROS-release.git",
-      "commit": "6a0c4a5fe0028e3d5d5091a7518509b470516d52",
-      "tag": null,
+      "commit": "b6a48765f482a772c35181621c382d2506a2f871",
+      "tag": "v1.0.0.1",
       "package": "imavros",
-      "debian_version": "1.0.0.0-1+deb13",
+      "debian_version": "1.0.0.1-1+deb13",
       "artifact": {
-        "filename": "imavros_1.0.0.0-1+deb13_arm64.deb",
-        "url": null,
-        "sha256": null
+        "filename": "imavros_1.0.0.1-1+deb13_arm64.deb",
+        "url": "https://github.com/Drone-Age/iMAVROS-release/releases/download/v1.0.0.1/imavros_1.0.0.1-1%2Bdeb13_arm64.deb",
+        "sha256": "1aa85d135a1e843b794bf110a8665c57951567e90b2b94254a10e13418af3f25"
       }
     },
     "vins": {
@@ -52,8 +52,8 @@
       "debian_version": "1.0.2.0",
       "artifact": {
         "filename": "vins-mono-ros2_1.0.2.0_arm64.deb",
-        "url": null,
-        "sha256": null
+        "url": "https://github.com/Drone-Age/VINS-NEO/releases/download/v1_00_02_00/vins-mono-ros2_1.0.2.0_arm64.deb",
+        "sha256": "757d043393cdd956a4ecc9c2a2945a3415449ee3fcac2ee6c8f59b57c41d7bd6"
       }
     }
   },
@@ -72,7 +72,7 @@
     "metadata": null,
     "component_native": {
       "iros2": null,
-      "imavros": null,
+      "imavros": "https://github.com/Drone-Age/iMAVROS-release/releases/download/v1.0.0.1/native-gate.json",
       "vins": null
     },
     "package_audit": null,

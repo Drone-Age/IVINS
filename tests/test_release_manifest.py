@@ -1,3 +1,4 @@
+import copy
 import importlib.util
 import json
 import unittest
@@ -31,6 +32,34 @@ class ReleaseManifestTests(unittest.TestCase):
         errors = MODULE.validate(self.manifest, released=False)
         self.assertIn(
             "vins.commit does not match the superproject gitlink", errors
+        )
+
+    def test_gitlink_reads_checked_out_submodule_commit(self):
+        self.assertEqual(
+            self.manifest["components"]["imavros"]["commit"],
+            MODULE.gitlink("components/iMAVROS-release"),
+        )
+
+    def test_unapproved_component_is_rejected(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["components"]["camera"] = {
+            "package": "ivins-camera-ros",
+        }
+        errors = MODULE.validate(manifest, released=False)
+        self.assertIn(
+            "components must contain exactly iros2, imavros, and vins", errors
+        )
+
+    def test_latest_component_url_is_rejected_for_release(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["release"]["status"] = "released"
+        manifest["components"]["iros2"]["artifact"]["url"] = (
+            "https://github.com/Drone-Age/iros2_0/releases/latest/download/"
+            "iros2-0_0.1.2-1+deb13_arm64.deb"
+        )
+        errors = MODULE.validate(manifest, released=True)
+        self.assertIn(
+            "released manifest forbids a latest URL for iros2", errors
         )
 
 

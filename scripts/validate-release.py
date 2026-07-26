@@ -22,6 +22,17 @@ SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 
 
 def gitlink(path: str) -> str | None:
+    worktree = subprocess.run(
+        ["git", "-C", path, "rev-parse", "HEAD"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    worktree_commit = worktree.stdout.strip()
+    if worktree.returncode == 0 and SHA_RE.fullmatch(worktree_commit):
+        return worktree_commit
+
     result = subprocess.run(
         ["git", "ls-files", "--stage", "--", path],
         cwd=ROOT,
@@ -82,6 +93,11 @@ def validate(manifest: dict[str, Any], released: bool) -> list[str]:
         "imavros": ("components/iMAVROS-release", "imavros"),
         "vins": ("components/VINS-NEO", "vins-mono-ros2"),
     }
+    require(
+        errors,
+        set(components) == set(expected_components),
+        "components must contain exactly iros2, imavros, and vins",
+    )
     for name, (expected_path, expected_package) in expected_components.items():
         component = components.get(name, {})
         commit = component.get("commit", "")
@@ -103,6 +119,11 @@ def validate(manifest: dict[str, Any], released: bool) -> list[str]:
         if released:
             require(errors, bool(component.get("tag")), f"released manifest requires {name}.tag")
             require(errors, bool(artifact.get("url")), f"released manifest requires {name} artifact URL")
+            require(
+                errors,
+                "/releases/latest/" not in (artifact.get("url") or ""),
+                f"released manifest forbids a latest URL for {name}",
+            )
             require(
                 errors,
                 bool(SHA256_RE.fullmatch(artifact.get("sha256") or "")),

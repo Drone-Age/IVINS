@@ -39,5 +39,7 @@ python3 "${repo_root}/scripts/package-manifest.py" \
 printf 'Installed-Size: %s\n' "$(du -sk "${package_root}" | cut -f1)" \
   >> "${package_root}/DEBIAN/control"
 
-dpkg-deb --root-owner-group --build "${package_root}" "${output_dir}/${filename}"
+find "${package_root}" -exec touch -h -d '@0' {} +
+SOURCE_DATE_EPOCH=0 dpkg-deb --root-owner-group --build \
+  "${package_root}" "${output_dir}/${filename}"
 sha256sum "${output_dir}/${filename}" > "${output_dir}/${filename}.sha256"

@@ -59,12 +59,12 @@
       "package": "ivins",
       "filename": "ivins_1.0.0.0-1+deb13_arm64.deb",
       "url": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins_1.0.0.0-1%2Bdeb13_arm64.deb",
-      "sha256": "b946c0e5401929a0f11dbe8e242b6a94adfceb859f5ca8071dbdaf960c8981cb"
+      "sha256": "9401fc3daeb6c1df77d2737e3d4866478a851cb18248b5009e13012465c27187"
     },
     "offline_bundle": {
       "filename": "ivins_1.0.0.0-1+deb13_arm64.tar.zst",
       "url": "https://github.com/Drone-Age/IVINS/releases/download/v1.0.0.0/ivins_1.0.0.0-1%2Bdeb13_arm64.tar.zst",
-      "sha256": "820cde454a53860e6e01c53c6c2338f4a1a750fa9a299bcf7ed5df12c843fc88"
+      "sha256": "5234499fdc2b91c97f4a286a3506019bcb74cbfebcf78fd6198c9f2944f347f3"
     }
   },
   "gates": {

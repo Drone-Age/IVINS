@@ -1,5 +1,9 @@
 # Передрелізний gate кінцевого продукту iVINS
 
+> Legacy notice: цей документ описує gate iVINS 1.0.0.0 на основі
+> `iros2-0`. Чинний регламент:
+> [PRE_RELEASE_TESTING.uk.md](PRE_RELEASE_TESTING.uk.md).
+
 Усі пункти обов’язкові. Пропущена перевірка має стан `BLOCKED` або `FAIL`,
 але ніколи не вважається `PASS`.
 

@@ -1,5 +1,8 @@
 # Процес складання та поставки iVINS
 
+> Legacy notice: цей документ описує процес iVINS 1.0.0.0 на основі
+> `iros2-0`. Чинний регламент: [RELEASE_PROCESS.uk.md](RELEASE_PROCESS.uk.md).
+
 ## 1. Планування
 
 1. Створити release issue з версією, tag, scope і критеріями приймання.

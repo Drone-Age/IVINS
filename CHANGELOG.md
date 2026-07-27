@@ -2,6 +2,22 @@
 
 All notable product-level changes to iVINS are documented in this file.
 
+## Process [1.1.0] - 2026-07-28
+
+### Changed
+
+- Replaced the obsolete monolithic `iros2-0` integration contract with the
+  signed split-package `iros2j` APT repository contract.
+- Aligned the next iVINS product matrix with iROS2j 1.0.3, iMAVROS 1.0.0.2,
+  and a new VINS-NEO release that consumes ROS dependencies from
+  `/opt/iros2j`.
+- Defined exact component compatibility, activation order, evidence states,
+  native/integration gates, offline delivery contents, and post-release
+  verification.
+- Established canonical English normative documents with mandatory Ukrainian
+  `.uk.md` counterparts. Existing `*_UK.md` files are retained as legacy
+  documents for the 1.0.0.0 product history.
+
 ## [1.0.0.0] - 2026-07-27
 
 ### Added

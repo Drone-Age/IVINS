@@ -7,10 +7,9 @@ INDRA VINS — система візуально-інерціальної нав
 
 - [VINS-NEO](https://github.com/Drone-Age/VINS-NEO) — ключовий програмний
   компонент на базі ROS 2 Jazzy.
-- [IROS2_0](https://github.com/Drone-Age/iros2_0) — відтворювана збірка та пакування
-  ROS 2 Jazzy для Raspberry Pi 5 з Debian 13 ARM64. Build host: Windows 11
-  із Docker Desktop; кінцевий результат: нативний Debian-пакет без Docker
-  dependency на цільовому обладнанні.
+- [iROS2j](https://github.com/Drone-Age/iros2_0) — нативно зібраний signed
+  APT snapshot ROS 2 Jazzy зі split-пакетами `iros2j-*` для Raspberry Pi 5
+  з Debian 13 ARM64 та prefix `/opt/iros2j`.
 - [iMAVROS-release](https://github.com/Drone-Age/iMAVROS-release) — інструменти нативної збірки,
   перевірки та випуску Debian-пакета iMAVROS для Debian 13 ARM64
   (Raspberry Pi 5).
@@ -18,16 +17,17 @@ INDRA VINS — система візуально-інерціальної нав
 ## Поставка кінцевого продукту
 
 iVINS постачається як продуктовий Debian meta-package із точними залежностями
-від `iros2-0`, `imavros` і `vins-mono-ros2`. Для офлайн-встановлення один
-release bundle містить усі component `.deb`, meta-package, manifest і
-контрольні суми.
+від потрібних `iros2j-*` пакетів, `imavros` і `vins-mono-ros2`. Офлайн bundle
+містить signed iROS2j APT snapshot, component `.deb`, meta-package, manifest,
+installer, SBOM, evidence і контрольні суми.
 
-- [Процес випуску iVINS](docs/RELEASE_PROCESS_UK.md)
-- [Передрелізний gate](docs/PRE_RELEASE_TESTING_UK.md)
-- [Узгодження процесів компонентів](docs/COMPONENT_PROCESS_ALIGNMENT_UK.md)
-- [Політика версіювання](docs/VERSIONING_UK.md)
+- [Нормативна документація](docs/README.md)
+- [Процес випуску iVINS](docs/RELEASE_PROCESS.uk.md)
+- [Передрелізний gate](docs/PRE_RELEASE_TESTING.uk.md)
+- [Контракт сумісності компонентів](docs/COMPONENT_PROCESS_ALIGNMENT.uk.md)
+- [Політика версіонування](docs/VERSIONING.uk.md)
 
-Поточний draft manifest:
+Історичний manifest випуску 1.0.0.0:
 [`manifests/ivins-1.0.0.0.json`](manifests/ivins-1.0.0.0.json).
 
 ## Отримання проєкту

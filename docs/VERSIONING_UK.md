@@ -1,5 +1,8 @@
 # Політика версіювання iVINS
 
+> Legacy notice: чинна двомовна політика:
+> [VERSIONING.uk.md](VERSIONING.uk.md).
+
 ## Версія продукту
 
 `VERSION` має формат `PRODUCT.MAJOR.MINOR.PATCH`. Продуктовий тег має формат

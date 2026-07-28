@@ -1,0 +1,6 @@
+device=/dev/ttyAMA10
+resolved_device=/dev/ttyAMA10
+baud=460800
+user=rpi
+uid=1000(rpi) gid=1000(rpi) groups=1000(rpi),4(adm),20(dialout),24(cdrom),27(sudo),29(audio),44(video),46(plugdev),60(games),100(users),102(netdev),108(lpadmin),986(gpio),988(i2c),989(spi),992(render),996(input)
+crw-rw---- 1 root dialout 204, 74 Jul 27 23:47 /dev/ttyAMA10

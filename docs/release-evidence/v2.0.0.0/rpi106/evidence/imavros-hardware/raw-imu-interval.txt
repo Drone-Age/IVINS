@@ -1,0 +1,5 @@
+waiting for service to become available...
+requester: making request: mavros_msgs.srv.MessageInterval_Request(message_id=27, message_rate=20.0)
+
+response:
+mavros_msgs.srv.MessageInterval_Response(success=True)

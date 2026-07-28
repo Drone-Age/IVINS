@@ -26,9 +26,13 @@ installer, SBOM, evidence і контрольні суми.
 - [Передрелізний gate](docs/PRE_RELEASE_TESTING.uk.md)
 - [Контракт сумісності компонентів](docs/COMPONENT_PROCESS_ALIGNMENT.uk.md)
 - [Політика версіонування](docs/VERSIONING.uk.md)
+- [Draft release notes iVINS 2.0.0.0](docs/RELEASE_NOTES_2.0.0.0.uk.md)
 
 Історичний manifest випуску 1.0.0.0:
 [`manifests/ivins-1.0.0.0.json`](manifests/ivins-1.0.0.0.json).
+
+Поточний draft manifest випуску 2.0.0.0:
+[`manifests/ivins-2.0.0.0.json`](manifests/ivins-2.0.0.0.json).
 
 ## Отримання проєкту
 

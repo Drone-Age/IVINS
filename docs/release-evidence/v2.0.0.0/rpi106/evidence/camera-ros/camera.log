@@ -1,0 +1,94 @@
+[INFO] [launch]: All log files can be found below /home/rpi/.ros/log/2026-07-28-02-03-17-425169-rpi-59867
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [component_container-1]: process started with pid [59891]
+[component_container-1] [INFO] [1785204198.332252382] [camera_container]: Load Library: /home/rpi/camera-ros-native/install/lib/libcamera_component.so
+[component_container-1] [INFO] [1785204198.544388823] [camera_container]: Found class: rclcpp_components::NodeFactoryTemplate<camera::CameraNode>
+[component_container-1] [INFO] [1785204198.544452731] [camera_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<camera::CameraNode>
+[component_container-1] [3:01:18.295171075] [59891]  INFO Camera camera_manager.cpp:340 libcamera v0.7.1+rpt20260609
+[component_container-1] [3:01:18.303655545] [59906]  INFO RPI pisp.cpp:720 libpisp version v1.5.0 01-05-2026 (05:33:53)
+[component_container-1] [3:01:18.316464851] [59906]  INFO IPAProxy ipa_proxy.cpp:184 Using tuning file /usr/share/libcamera/ipa/rpi/pisp/ov5647.json
+[component_container-1] [3:01:18.323446795] [59906]  INFO Camera camera_manager.cpp:223 Adding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36' for pipeline handler rpi/pisp
+[component_container-1] [3:01:18.323469332] [59906]  INFO RPI pisp.cpp:1181 Registered camera /base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36 to CFE device /dev/media2 and ISP device /dev/media0 using PiSP variant BCM2712_C0
+[component_container-1] [3:01:18.323651351] [59906]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc30
+[component_container-1] [3:01:18.323662222] [59906]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc12
+[component_container-1] [INFO] [1785204198.587356859] [camera]:
+[component_container-1] >> stream formats:
+[component_container-1]    - R8 (32x32 - 2592x1944)
+[component_container-1]    - R16 (32x32 - 2592x1944)
+[component_container-1]    - MONO_PISP_COMP1 (32x32 - 2592x1944)
+[component_container-1]    - NV21 (32x32 - 2592x1944)
+[component_container-1]    - SBGGR8 (32x32 - 2592x1944)
+[component_container-1]    - SBGGR16 (32x32 - 2592x1944)
+[component_container-1]    - BGGR_PISP_COMP1 (32x32 - 2592x1944)
+[component_container-1]    - XBGR8888 (32x32 - 2592x1944)
+[component_container-1]    - BGR888 (32x32 - 2592x1944)
+[component_container-1]    - RGB888 (32x32 - 2592x1944)
+[component_container-1]    - XRGB8888 (32x32 - 2592x1944)
+[component_container-1]    - SGBRG16 (32x32 - 2592x1944)
+[component_container-1]    - GBRG_PISP_COMP1 (32x32 - 2592x1944)
+[component_container-1]    - SGRBG16 (32x32 - 2592x1944)
+[component_container-1]    - GRBG_PISP_COMP1 (32x32 - 2592x1944)
+[component_container-1]    - SRGGB16 (32x32 - 2592x1944)
+[component_container-1]    - RGGB_PISP_COMP1 (32x32 - 2592x1944)
+[component_container-1]    - BGR161616 (32x32 - 2592x1944)
+[component_container-1]    - RGB161616 (32x32 - 2592x1944)
+[component_container-1]    - SRGGB8 (32x32 - 2592x1944)
+[component_container-1]    - SGRBG8 (32x32 - 2592x1944)
+[component_container-1]    - SGBRG8 (32x32 - 2592x1944)
+[component_container-1]    - YUYV (32x32 - 2592x1944)
+[component_container-1]    - UYVY (32x32 - 2592x1944)
+[component_container-1] [WARN] [1785204198.587425489] [camera]: no pixel format selected, auto-selecting: "XRGB8888"
+[component_container-1] [WARN] [1785204198.587438896] [camera]: set parameter 'format' to silence this warning
+[component_container-1] [INFO] [1785204198.587468211] [camera]:
+[component_container-1] >> XRGB8888 format sizes:
+[component_container-1]    - 160x120
+[component_container-1]    - 240x160
+[component_container-1]    - 320x240
+[component_container-1]    - 400x240
+[component_container-1]    - 480x320
+[component_container-1]    - 640x360
+[component_container-1]    - 640x480
+[component_container-1]    - 720x480
+[component_container-1]    - 768x480
+[component_container-1]    - 854x480
+[component_container-1]    - 720x576
+[component_container-1]    - 800x600
+[component_container-1]    - 960x540
+[component_container-1]    - 1024x576
+[component_container-1]    - 960x640
+[component_container-1]    - 1024x600
+[component_container-1]    - 1024x768
+[component_container-1]    - 1280x720
+[component_container-1]    - 1152x864
+[component_container-1]    - 1280x800
+[component_container-1]    - 1360x768
+[component_container-1]    - 1366x768
+[component_container-1]    - 1440x900
+[component_container-1]    - 1280x1024
+[component_container-1]    - 1536x864
+[component_container-1]    - 1280x1080
+[component_container-1]    - 1600x900
+[component_container-1]    - 1400x1050
+[component_container-1]    - 1680x1050
+[component_container-1]    - 1600x1200
+[component_container-1]    - 1920x1080
+[component_container-1]    - 2048x1080
+[component_container-1]    - 1920x1200
+[component_container-1]    - 2160x1080
+[component_container-1]    - 2048x1152
+[component_container-1]    - 2560x1080
+[component_container-1]    - 2048x1536
+[component_container-1]    - 2560x1440
+[component_container-1]    - 2560x1600
+[component_container-1] [3:01:18.323974964] [59891]  INFO Camera camera.cpp:1216 configuring streams: (0) 640x480-XRGB8888/sRGB
+[component_container-1] [3:01:18.324103428] [59906]  INFO RPI pisp.cpp:1485 Sensor: /base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36 - Selected sensor format: 640x480-SGBRG10_1X10/RAW - Selected CFE format: 640x480-PC1g/RAW
+[component_container-1] [INFO] [1785204198.587809528] [camera]: camera "/base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36" configured with 640x480-XRGB8888/sRGB stream
+[component_container-1] [INFO] [1785204198.588018566] [camera]: using default calibration URL
+[component_container-1] [INFO] [1785204198.588049251] [camera]: camera calibration URL: file:///home/rpi/.ros/camera_info/ov5647__base_axi_pcie_1000120000_rp1_i2c_88000_ov5647_36_640x480.yaml
+[component_container-1] [ERROR] [1785204198.588127011] [camera_calibration_parsers]: Unable to open camera calibration file [/home/rpi/.ros/camera_info/ov5647__base_axi_pcie_1000120000_rp1_i2c_88000_ov5647_36_640x480.yaml]
+[component_container-1] [WARN] [1785204198.588193141] [camera]: Camera calibration file /home/rpi/.ros/camera_info/ov5647__base_axi_pcie_1000120000_rp1_i2c_88000_ov5647_36_640x480.yaml not found
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/camera' in container '/camera_container'
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [component_container-1]: sending signal 'SIGINT' to process[component_container-1]
+[INFO] [component_container-1]: process has finished cleanly [pid 59891]
+[component_container-1] [INFO] [1785204206.186385034] [rclcpp]: signal_handler(SIGINT/SIGTERM)

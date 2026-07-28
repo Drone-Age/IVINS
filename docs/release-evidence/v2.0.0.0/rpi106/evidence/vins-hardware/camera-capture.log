@@ -1,0 +1,29 @@
+[2:56:49.241853536] [58904]  INFO Camera camera_manager.cpp:340 libcamera v0.7.1+rpt20260609
+[2:56:49.252258298] [58907]  INFO RPI pisp.cpp:720 libpisp version v1.5.0 01-05-2026 (05:33:53)
+[2:56:49.263582676] [58907]  INFO IPAProxy ipa_proxy.cpp:184 Using tuning file /usr/share/libcamera/ipa/rpi/pisp/ov5647.json
+[2:56:49.272144076] [58907]  INFO Camera camera_manager.cpp:223 Adding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36' for pipeline handler rpi/pisp
+[2:56:49.272169113] [58907]  INFO RPI pisp.cpp:1181 Registered camera /base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36 to CFE device /dev/media2 and ISP device /dev/media0 using PiSP variant BCM2712_C0
+WARNING: Capture will not make use of temporal denoise
+         Consider using the --zsl option for best results, for example:
+         rpicam-still --zsl -o /tmp/ivins-issue7.MHEUei/evidence/vins-hardware/camera.jpg
+[2:56:49.292977767] [58907]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc30
+[2:56:49.293003674] [58907]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc12
+Mode selection for 1296:972:12:P
+    SGBRG10_CSI2P,640x480/0 - Score: 3296
+    SGBRG10_CSI2P,1296x972/0 - Score: 1000
+    SGBRG10_CSI2P,1920x1080/0 - Score: 1349.67
+    SGBRG10_CSI2P,2592x1944/0 - Score: 1567
+Stream configuration adjusted
+[2:56:49.293177361] [58904]  INFO Camera camera.cpp:1216 configuring streams: (0) 1296x972-YUV420/sYCC (1) 1296x972-GBRG_PISP_COMP1/RAW
+[2:56:49.293272528] [58907]  INFO RPI pisp.cpp:1485 Sensor: /base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36 - Selected sensor format: 1296x972-SGBRG10_1X10/RAW - Selected CFE format: 1296x972-PC1g/RAW
+[2:56:50.337507572] [58907]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc30
+[2:56:50.337538906] [58907]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc12
+Mode selection for 2592:1944:12:P
+    SGBRG10_CSI2P,640x480/0 - Score: 7832
+    SGBRG10_CSI2P,1296x972/0 - Score: 5536
+    SGBRG10_CSI2P,1920x1080/0 - Score: 4238.67
+    SGBRG10_CSI2P,2592x1944/0 - Score: 1000
+Stream configuration adjusted
+[2:56:50.337739888] [58904]  INFO Camera camera.cpp:1216 configuring streams: (0) 2592x1944-YUV420/sYCC (1) 2592x1944-GBRG_PISP_COMP1/RAW
+[2:56:50.338893006] [58907]  INFO RPI pisp.cpp:1485 Sensor: /base/axi/pcie@1000120000/rp1/i2c@88000/ov5647@36 - Selected sensor format: 2592x1944-SGBRG10_1X10/RAW - Selected CFE format: 2592x1944-PC1g/RAW
+Still capture image received

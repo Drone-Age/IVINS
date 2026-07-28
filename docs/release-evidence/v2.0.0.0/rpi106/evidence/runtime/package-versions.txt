@@ -1,0 +1,8 @@
+imavros	1.0.0.2-1+deb13	installed
+iros2j-common-interfaces	1.0.3-1+deb13	installed
+iros2j-ros-base	1.0.3-1+deb13	installed
+iros2j-ros-core	1.0.3-1+deb13	installed
+iros2j-rviz2	1.0.3-1+deb13	installed
+iros2j-vision-opencv	1.0.3-1+deb13	installed
+ivins	2.0.0.0-1+deb13	installed
+vins-mono-ros2	1.0.3.0	installed

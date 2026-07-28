@@ -1,0 +1,8 @@
+[INFO] [launch]: All log files can be found below /home/rpi/.ros/log/2026-07-28-01-53-23-215462-rpi-47221
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: [feature tracker launch] config path: /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml
+[INFO] [feature_tracker-1]: process started with pid [47233]
+[feature_tracker-1] [INFO] [1785203603.686850437] [feature_tracker.feature_tracker]: Loaded config_file: /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml
+[feature_tracker-1] [INFO] [1785203603.687096439] []: config_file: /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml
+[feature_tracker-1] [INFO] [1785203603.687275588] [feature_tracker.feature_tracker]: Loaded vins_folder: /opt/vins/share/config_pkg/config/..
+[feature_tracker-1] [INFO] [1785203603.687320755] []: reading paramerter of camera /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml

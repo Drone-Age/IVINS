@@ -20,7 +20,9 @@ evidence.
 ## 2. Root manifest
 
 Створіть новий `manifests/ivins-<version>.json`; не змінюйте опублікований
-manifest 1.0.0.0. Нова schema повинна відрізняти:
+manifest 1.0.0.0. Наступна матриця використовує `schema_version: 2`;
+schema version 1 залишається чинною лише для перевірки історичного релізу
+1.0.0.0. Нова schema повинна відрізняти:
 
 - iROS2j APT repository artifact, SHA-256, signing-key identity,
   Release/InRelease metadata, package inventory і точні Debian versions;

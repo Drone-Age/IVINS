@@ -1,0 +1,28 @@
+{
+  "device": "/dev/ttyAMA10",
+  "baud": 460800,
+  "duration_s": 12.045,
+  "raw_bytes": 278,
+  "parsed_frames": 13,
+  "frames": [
+    {
+      "version": "v2",
+      "msgid": 0,
+      "sysid": 1,
+      "compid": 1,
+      "count": 12
+    },
+    {
+      "version": "v2",
+      "msgid": 111,
+      "sysid": 1,
+      "compid": 1,
+      "count": 1
+    }
+  ],
+  "heartbeats": 12,
+  "heartbeat_rate_hz": 0.996,
+  "expected_system_id": 1,
+  "expected_component_id": 1,
+  "passed": true
+}

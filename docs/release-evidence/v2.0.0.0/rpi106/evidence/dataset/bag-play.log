@@ -1,0 +1,8 @@
+stdin is not a terminal device. Keyboard handling disabled.[INFO] [1785203607.832847561] [rosbag2_storage]: Opened database '/home/rpi/vins-neo-release/datasets/data_ros2/data_ros2.db3' for READ_ONLY.
+[INFO] [1785203607.833022044] [rosbag2_player]: Set rate to 2
+[INFO] [1785203607.849779859] [rosbag2_player]: Adding keyboard callbacks.
+[INFO] [1785203607.849826526] [rosbag2_player]: Press SPACE for Pause/Resume
+[INFO] [1785203607.849837933] [rosbag2_player]: Press CURSOR_RIGHT for Play Next Message
+[INFO] [1785203607.849847544] [rosbag2_player]: Press CURSOR_UP for Increase Rate 10%
+[INFO] [1785203607.849856915] [rosbag2_player]: Press CURSOR_DOWN for Decrease Rate 10%
+[INFO] [1785203607.851268387] [rosbag2_player]: Playback until timestamp: -1

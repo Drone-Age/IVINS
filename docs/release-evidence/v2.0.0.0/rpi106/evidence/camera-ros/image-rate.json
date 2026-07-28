@@ -1,0 +1,9 @@
+{
+  "messages": 30,
+  "rate_hz": 28.82857700727625,
+  "header_monotonic": true,
+  "frame_id": "camera",
+  "encoding": "bgra8",
+  "width": 640,
+  "height": 480
+}

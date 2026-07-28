@@ -38,6 +38,7 @@ PY
 [[ "$(dpkg-deb -f "${deb}" Depends)" == "${expected}" ]]
 contents="$(dpkg-deb --contents "${deb}")"
 grep -q './usr/share/doc/ivins/release-manifest.json' <<<"${contents}"
+grep -q './usr/share/ivins/activate.sh' <<<"${contents}"
 if grep -Eq '\./opt/(iros2j|imavros|vins)(/|$)' <<<"${contents}"; then
   echo "iVINS meta-package must not contain component payload." >&2
   exit 1
@@ -54,4 +55,7 @@ python3 "$(dirname "$0")/package-manifest.py" \
   "${manifest}" "${payload}/expected-release-manifest.json"
 cmp "${payload}/expected-release-manifest.json" \
   "${payload}/usr/share/doc/ivins/release-manifest.json"
+bash -n "${payload}/usr/share/ivins/activate.sh"
+grep -qF '/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE' \
+  "${payload}/usr/share/ivins/activate.sh"
 echo "iVINS meta-package audit PASSED."

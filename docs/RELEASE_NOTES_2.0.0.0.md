@@ -15,6 +15,11 @@ contract with the signed split-package iROS2j APT snapshot at `/opt/iros2j`.
 The supported activation order is `/opt/iros2j`, `/opt/imavros`, then
 `/opt/vins`, using `rmw_fastrtps_cpp`.
 
+Activate the product from a clean shell with
+`source /usr/share/ivins/activate.sh`. The iVINS-owned hook preserves the
+immutable iROS2j payload while making its sibling OGRE plugin directory
+visible to the dynamic loader before the iMAVROS and VINS overlays activate.
+
 ## Offline delivery
 
 The autonomous bundle contains the signed iROS2j APT snapshot and key,
@@ -27,8 +32,9 @@ rejects the historical package and prefix.
 
 The meta-package, signed offline bundle, clean offline reinstall, controlled
 dataset, configured FCU, and OV5647 gates passed on the authorized Raspberry
-Pi 5. Publication remains blocked by the iROS2j 1.0.3 OGRE ELF dependency
-failure, the absence of a hardware-specific OV5647/FCU VINS calibration, and
-the available camera workspace's legacy `/opt/iros2_0/jazzy` underlay
-reference. See the [versioned native gate report](release-evidence/v2.0.0.0/rpi106/GATE_REPORT.md).
+Pi 5. The iVINS activation hook resolves the iROS2j 1.0.3 OGRE ELF
+dependency. Publication remains blocked by the absence of a hardware-specific
+OV5647/FCU VINS calibration and the available camera workspace's legacy
+`/opt/iros2_0/jazzy` underlay reference. See the
+[versioned native gate report](release-evidence/v2.0.0.0/rpi106/GATE_REPORT.md).
 This draft must not be published until every mandatory result is `PASS`.

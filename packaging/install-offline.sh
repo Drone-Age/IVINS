@@ -181,3 +181,4 @@ test ! -e /opt/iros2_0/jazzy
 test -f /opt/iros2j/setup.bash
 test -f /opt/imavros/setup.bash
 test -f /opt/vins/setup.bash
+test -f /usr/share/ivins/activate.sh

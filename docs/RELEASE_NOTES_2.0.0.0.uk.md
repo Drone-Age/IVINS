@@ -15,6 +15,11 @@
 порядок активації: `/opt/iros2j`, `/opt/imavros`, потім `/opt/vins`, із
 `rmw_fastrtps_cpp`.
 
+У clean shell активуйте продукт командою
+`source /usr/share/ivins/activate.sh`. Hook, яким володіє iVINS, зберігає
+immutable payload iROS2j і робить sibling-каталог OGRE plugins видимим для
+dynamic loader до активації overlays iMAVROS та VINS.
+
 ## Offline-постачання
 
 Автономний bundle містить signed iROS2j APT snapshot і ключ, точні пакети
@@ -26,9 +31,10 @@ package inventory, SBOM, installer, release notes і `SHA256SUMS`. Installer
 
 Meta-package, підписаний offline bundle, clean offline reinstall,
 контрольований dataset, налаштований FCU та OV5647 gates пройшли на
-авторизованому Raspberry Pi 5. Публікацію заблоковано через iROS2j 1.0.3 OGRE
-ELF dependency failure, відсутність hardware-specific OV5647/FCU VINS
-calibration та legacy-посилання доступного camera workspace на underlay
-`/opt/iros2_0/jazzy`. Дивіться [версійований звіт native gates](release-evidence/v2.0.0.0/rpi106/GATE_REPORT.uk.md).
+авторизованому Raspberry Pi 5. iVINS activation hook усуває iROS2j 1.0.3 OGRE
+ELF dependency. Публікацію й надалі блокують відсутність hardware-specific
+OV5647/FCU VINS calibration та legacy-посилання доступного camera workspace на
+underlay `/opt/iros2_0/jazzy`. Дивіться
+[версійований звіт native gates](release-evidence/v2.0.0.0/rpi106/GATE_REPORT.uk.md).
 Цю чернетку не можна публікувати, доки кожен обов'язковий результат не матиме
 `PASS`.

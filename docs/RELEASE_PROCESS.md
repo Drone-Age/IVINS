@@ -67,7 +67,8 @@ and hash selected by the root manifest.
 
 The `ivins` meta-package contains no component payload. It declares exact
 dependencies on the required `iros2j-*` packages, exact iMAVROS, and exact
-VINS Debian versions. The bundle contains the signed APT snapshot and keyring,
+VINS Debian versions and owns the versioned `/usr/share/ivins/activate.sh`
+product-integration hook. The bundle contains the signed APT snapshot and keyring,
 component/meta `.deb` files, root manifest, installer, `SHA256SUMS`, SBOM,
 release notes, and evidence.
 

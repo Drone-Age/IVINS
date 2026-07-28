@@ -180,6 +180,53 @@ class ReleaseManifestTests(unittest.TestCase):
         self.assertIn("Acquire::AllowInsecureRepositories=false", installer)
         self.assertIn("Forbidden package iros2-0 is installed.", installer)
 
+    def test_product_activation_owns_idempotent_ogre_loader_compatibility(self):
+        activation = (ROOT / "packaging" / "activate.sh").read_text(
+            encoding="utf-8"
+        )
+        ogre = "/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE"
+        self.assertIn(ogre, activation)
+        self.assertLess(
+            activation.index("source /opt/iros2j/setup.bash"),
+            activation.index('case ":${LD_LIBRARY_PATH:-}:"'),
+        )
+        self.assertLess(
+            activation.index('case ":${LD_LIBRARY_PATH:-}:"'),
+            activation.index("source /opt/imavros/setup.bash"),
+        )
+        self.assertIn('IVINS_PRODUCT_VERSION="2.0.0.0"', activation)
+        self.assertIn("set +u", activation)
+        self.assertIn("set -u", activation)
+        self.assertNotIn("/etc/ld.so.conf.d", activation)
+        self.assertNotIn("patchelf", activation)
+
+    def test_schema_v2_requires_product_activation_contract(self):
+        self.next_manifest["runtime"].pop("product_activation")
+        self.next_manifest["runtime"]["ogre_library_path"] = "/tmp/ogre"
+        errors = MODULE.validate(self.next_manifest, released=False)
+        self.assertIn(
+            "runtime.product_activation must be /usr/share/ivins/activate.sh",
+            errors,
+        )
+        self.assertIn("runtime.ogre_library_path is inconsistent", errors)
+
+    def test_ogre_gate_requires_complete_elf_audit(self):
+        gate = (ROOT / "scripts" / "run-ogre-compat-gate.sh").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Plugin_OctreeZone.so.1.12.10", gate)
+        self.assertIn("Plugin_PCZSceneManager.so.1.12.10", gate)
+        self.assertIn("find /opt/iros2j /opt/imavros /opt/vins", gate)
+        self.assertIn("test ! -s", gate)
+
+    def test_clean_offline_gate_repeats_ogre_audit(self):
+        gate = (ROOT / "scripts" / "run-clean-offline-ogre-gate.sh").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("sudo -n apt-get remove -y", gate)
+        self.assertIn("sudo -n env DEBIAN_FRONTEND=noninteractive", gate)
+        self.assertIn("run-ogre-compat-gate.sh", gate)
+
     def test_dataset_gate_terminates_complete_ros_process_groups(self):
         gate = (ROOT / "scripts" / "run-euroc-coverage-gate.sh").read_text(
             encoding="utf-8"

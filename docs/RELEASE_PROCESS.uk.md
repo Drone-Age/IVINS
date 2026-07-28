@@ -65,8 +65,9 @@ Component `PASS` приймається лише для точних commit, man
 ## 5. Формування продукту
 
 Meta-package `ivins` не містить component payload. Він декларує точні
-dependencies на потрібні `iros2j-*`, точні Debian versions iMAVROS і VINS.
-Bundle містить signed APT snapshot і keyring, component/meta `.deb`, root
+dependencies на потрібні `iros2j-*`, точні Debian versions iMAVROS і VINS та
+володіє версійованим product-integration hook
+`/usr/share/ivins/activate.sh`. Bundle містить signed APT snapshot і keyring, component/meta `.deb`, root
 manifest, installer, `SHA256SUMS`, SBOM, release notes та evidence.
 
 Offline installer повинен:

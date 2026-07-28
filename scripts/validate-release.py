@@ -407,6 +407,17 @@ def validate_schema_v2(manifest: dict[str, Any], released: bool) -> list[str]:
         runtime.get("rmw_implementation") == "rmw_fastrtps_cpp",
         "runtime.rmw_implementation must be rmw_fastrtps_cpp",
     )
+    require(
+        errors,
+        runtime.get("product_activation") == "/usr/share/ivins/activate.sh",
+        "runtime.product_activation must be /usr/share/ivins/activate.sh",
+    )
+    require(
+        errors,
+        runtime.get("ogre_library_path")
+        == "/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE",
+        "runtime.ogre_library_path is inconsistent",
+    )
     require(errors, "iros2-0" in runtime.get("forbidden_packages", []), "runtime must forbid iros2-0")
     require(errors, "/opt/iros2_0/jazzy" in runtime.get("forbidden_prefixes", []), "runtime must forbid /opt/iros2_0/jazzy")
 

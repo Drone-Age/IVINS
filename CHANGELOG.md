@@ -2,6 +2,13 @@
 
 All notable product-level changes to iVINS are documented in this file.
 
+## Process [2.1.0] - Unreleased
+
+### Added
+
+- Added a versioned iVINS product activation hook that supplies immutable
+  iROS2j 1.0.3 OGRE loader compatibility before activating iMAVROS and VINS.
+
 ## [2.0.0.0] - Unreleased
 
 ### Added
@@ -23,9 +30,10 @@ All notable product-level changes to iVINS are documented in this file.
 - Draft and blocked. The meta-package, signed offline bundle, clean offline
   reinstall, controlled dataset, configured FCU, and OV5647 gates passed on
   `rpi@192.168.144.106`.
-- Publication is blocked by one unresolved iROS2j 1.0.3 OGRE ELF dependency,
-  the missing OV5647/FCU-specific VINS calibration, and the available
-  `camera_ros` workspace's legacy `/opt/iros2_0/jazzy` underlay reference.
+- The iVINS-owned activation hook resolves the iROS2j 1.0.3 OGRE dependency;
+  publication remains blocked by the missing OV5647/FCU-specific VINS
+  calibration and the available `camera_ros` workspace's legacy
+  `/opt/iros2_0/jazzy` underlay reference.
 
 ## Process [1.1.0] - 2026-07-28
 

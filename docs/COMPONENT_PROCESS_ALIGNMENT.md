@@ -16,7 +16,7 @@ The next matrix must select immutable releases satisfying:
 | iROS2j | released signed APT snapshot; split `iros2j-*` packages; `/opt/iros2j`; currently compatible baseline 1.0.3 / `v2.1.0.3` |
 | iMAVROS | released ARM64 `.deb` built against the same exact iROS2j snapshot; `/opt/imavros`; currently compatible baseline 1.0.0.2 |
 | VINS-NEO | new released ARM64 `.deb` built against the same exact iROS2j snapshot; `/opt/vins`; no private ROS dependency copies |
-| iVINS | payload-free meta-package plus manifest, installer, evidence, and offline bundle |
+| iVINS | meta-package plus product-owned integration hook, manifest, installer, evidence, and offline bundle |
 
 VINS-NEO 1.0.2.0 is historical and incompatible with this matrix because it
 depends on `iros2-0`, sources `/opt/iros2_0/jazzy`, and embeds a private
@@ -32,7 +32,8 @@ iVINS product matrix is `BLOCKED`, not released.
 - VINS-NEO owns only its `/opt/vins` overlay and consumes ROS dependencies
   from iROS2j. It must not build or ship a second `cv_bridge`.
 - iVINS does not duplicate component payload. Its Debian dependencies and
-  embedded manifest identify the exact installable matrix.
+  embedded manifest identify the exact installable matrix. It may own
+  product-level integration files under `/usr/share/ivins`.
 
 The root manifest records the iROS2j release tag/commit, signed APT asset URL
 and SHA-256, repository metadata/key identity, exact package set and Debian
@@ -41,13 +42,17 @@ all component gate evidence.
 
 ## Environment activation
 
-The normative clean-shell order is:
+The normative clean-shell product activation is:
 
 ```bash
-source /opt/iros2j/setup.bash
-source /opt/imavros/setup.bash
-source /opt/vins/setup.bash
+source /usr/share/ivins/activate.sh
 ```
+
+The versioned hook sources `/opt/iros2j/setup.bash`, prepends
+`/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE` to
+`LD_LIBRARY_PATH` exactly once, then sources `/opt/imavros/setup.bash` and
+`/opt/vins/setup.bash`. This compatibility belongs to iVINS and does not
+modify the immutable iROS2j installation.
 
 All processes use the selected `RMW_IMPLEMENTATION` (Fast DDS for the current
 baseline), the same `ROS_DOMAIN_ID`, and compatible DDS discovery settings.

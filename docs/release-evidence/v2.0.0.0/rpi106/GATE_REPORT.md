@@ -38,7 +38,7 @@ not be published while a mandatory gate is `FAIL`, `BLOCKED`, or `NOT_RUN`.
 | Exact installed versions and activation order | PASS | `evidence/runtime/` |
 | `cv_bridge` ownership under `/opt/iros2j` | PASS | `evidence/runtime/python-prefixes.txt` |
 | Fast DDS selection and `ros2 doctor --report` | PASS | `evidence/runtime/` |
-| Complete ELF `ldd` audit | FAIL (1 of 435 ELF files) | `evidence/runtime/elf-ldd-failures.txt` |
+| Complete ELF `ldd` audit | PASS (435 of 435 ELF files) | `ogre-compatibility/native-install/results.tsv` |
 | Controlled ROS 2 dataset | PASS | `evidence/dataset/` |
 | FCU raw MAVLink/MAVROS/IMU telemetry | PASS | `evidence/imavros-hardware/` |
 | OV5647 still capture | PASS | `evidence/vins-hardware/` |
@@ -49,21 +49,13 @@ not be published while a mandatory gate is `FAIL`, `BLOCKED`, or `NOT_RUN`.
 
 ## Mandatory blockers
 
-1. The immutable iROS2j 1.0.3 package
-   `iros2j-rviz-ogre-vendor` contains
-   `Plugin_OctreeZone.so.1.12.10`, whose dependency
-   `Plugin_PCZSceneManager.so.1.12.10` is not resolvable after the normative
-   `/opt/iros2j` activation. The dependency exists in the sibling `OGRE`
-   directory, but that directory is absent from `LD_LIBRARY_PATH` and the
-   object has no resolving RPATH/RUNPATH. The complete ELF gate therefore
-   fails.
-2. The configured OV5647/FCU installation has no active
+1. The configured OV5647/FCU installation has no active
    `/etc/vins-neo/iVIN.yaml` or equivalent hardware-specific camera
    intrinsics, distortion, camera-to-IMU extrinsics, time offset, and rolling
    shutter configuration. The packaged VINS configurations are dataset or
    unrelated-device profiles and cannot be represented as valid live
    OV5647/FCU calibration.
-3. The available `camera_ros` workspace was built with a legacy
+2. The available `camera_ros` workspace was built with a legacy
    `/opt/iros2_0/jazzy` underlay reference. The camera publishes successfully
    when iROS2j is sourced first, but its setup emits the forbidden legacy
    underlay lookup and is not an eligible release input.
@@ -71,8 +63,8 @@ not be published while a mandatory gate is `FAIL`, `BLOCKED`, or `NOT_RUN`.
 ## Release decision
 
 Overall result: **BLOCKED**. The draft tooling, package, signed offline bundle,
-clean reinstall, controlled dataset, FCU, and camera gates are reproducible,
-but the mandatory ELF and calibrated live integration criteria are not
+clean reinstall, complete ELF audit, controlled dataset, FCU, and camera gates
+are reproducible, but the calibrated live integration criteria are not
 satisfied. Do not set the manifest to `released`, merge as a release, create
 immutable tags, or publish assets until the three blockers are fixed and all
 affected native and post-release gates are repeated.

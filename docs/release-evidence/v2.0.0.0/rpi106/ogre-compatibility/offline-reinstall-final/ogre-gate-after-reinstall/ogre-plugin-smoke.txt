@@ -1,0 +1,1 @@
+loaded=/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE/Plugin_OctreeZone.so.1.12.10

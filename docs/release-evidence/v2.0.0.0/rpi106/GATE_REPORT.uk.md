@@ -39,7 +39,7 @@
 | Точні встановлені версії та порядок активації | PASS | `evidence/runtime/` |
 | Власність `cv_bridge` у `/opt/iros2j` | PASS | `evidence/runtime/python-prefixes.txt` |
 | Вибір Fast DDS і `ros2 doctor --report` | PASS | `evidence/runtime/` |
-| Повний ELF `ldd` audit | FAIL (1 з 435 ELF-файлів) | `evidence/runtime/elf-ldd-failures.txt` |
+| Повний ELF `ldd` audit | PASS (435 із 435 ELF-файлів) | `ogre-compatibility/native-install/results.tsv` |
 | Контрольований ROS 2 dataset | PASS | `evidence/dataset/` |
 | FCU raw MAVLink/MAVROS/IMU telemetry | PASS | `evidence/imavros-hardware/` |
 | OV5647 still capture | PASS | `evidence/vins-hardware/` |
@@ -50,18 +50,12 @@
 
 ## Обов'язкові блокери
 
-1. Незмінний пакет iROS2j 1.0.3 `iros2j-rviz-ogre-vendor` містить
-   `Plugin_OctreeZone.so.1.12.10`, для якого залежність
-   `Plugin_PCZSceneManager.so.1.12.10` не знаходиться після нормативної
-   активації `/opt/iros2j`. Залежність є в сусідньому каталозі `OGRE`, але
-   цього каталогу немає в `LD_LIBRARY_PATH`, а об'єкт не має придатного
-   RPATH/RUNPATH. Тому повна ELF-перевірка має результат FAIL.
-2. Налаштована система OV5647/FCU не має активного
+1. Налаштована система OV5647/FCU не має активного
    `/etc/vins-neo/iVIN.yaml` або еквівалентної hardware-specific конфігурації
    camera intrinsics, distortion, camera-to-IMU extrinsics, time offset і
    rolling shutter. Пакетні VINS-конфігурації призначені для dataset або інших
    пристроїв і не можуть вважатися коректною калібровкою OV5647/FCU.
-3. Наявний workspace `camera_ros` складено з legacy-посиланням на underlay
+2. Наявний workspace `camera_ros` складено з legacy-посиланням на underlay
    `/opt/iros2_0/jazzy`. Камера успішно публікує після попереднього source
    iROS2j, але setup виконує заборонений legacy lookup і не є придатним
    релізним input.
@@ -69,8 +63,8 @@
 ## Рішення щодо релізу
 
 Загальний результат: **BLOCKED**. Чернеткові tooling, package, підписаний
-offline bundle, clean reinstall, контрольований dataset, FCU і camera gates
-відтворюються, але обов'язкові ELF та calibrated live integration критерії не
+offline bundle, clean reinstall, повний ELF audit, контрольований dataset,
+FCU і camera gates відтворюються, але calibrated live integration критерії не
 виконані. Не встановлюйте manifest у `released`, не merge-те як реліз, не
-створюйте незмінні теги та не публікуйте assets, доки три блокери не виправлено
+створюйте незмінні теги та не публікуйте assets, доки два блокери не виправлено
 і всі пов'язані native та post-release gates не повторено.

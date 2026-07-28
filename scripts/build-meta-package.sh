@@ -42,13 +42,19 @@ filename="${values[2]}"
 package_root="$(mktemp -d "/tmp/ivins_${version}_arm64.XXXXXX")"
 trap 'rm -rf -- "${package_root}"' EXIT
 
-mkdir -p "${package_root}/DEBIAN" "${package_root}/usr/share/doc/ivins" "${output_dir}"
+mkdir -p \
+  "${package_root}/DEBIAN" \
+  "${package_root}/usr/share/doc/ivins" \
+  "${package_root}/usr/share/ivins" \
+  "${output_dir}"
 sed \
   -e "s/@VERSION@/${version}/g" \
   -e "s/@COMPONENT_DEPENDS@/${component_depends}/g" \
   "${repo_root}/packaging/control.in" > "${package_root}/DEBIAN/control"
 python3 "${repo_root}/scripts/package-manifest.py" \
   "${manifest}" "${package_root}/usr/share/doc/ivins/release-manifest.json"
+install -m 0644 "${repo_root}/packaging/activate.sh" \
+  "${package_root}/usr/share/ivins/activate.sh"
 printf 'Installed-Size: %s\n' "$(du -sk "${package_root}" | cut -f1)" \
   >> "${package_root}/DEBIAN/control"
 

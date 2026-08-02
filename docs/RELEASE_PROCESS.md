@@ -21,7 +21,9 @@ but the product release remains `BLOCKED`.
 ## 2. Root manifest
 
 Create a new `manifests/ivins-<version>.json`; do not modify the published
-1.0.0.0 manifest. The new schema must distinguish:
+1.0.0.0 manifest. The next matrix uses `schema_version: 2`; schema version 1
+remains valid only for historical 1.0.0.0 validation. The new schema must
+distinguish:
 
 - the iROS2j APT repository artifact, its SHA-256, signing-key identity,
   Release/InRelease metadata, package inventory, and exact Debian versions;
@@ -65,7 +67,8 @@ and hash selected by the root manifest.
 
 The `ivins` meta-package contains no component payload. It declares exact
 dependencies on the required `iros2j-*` packages, exact iMAVROS, and exact
-VINS Debian versions. The bundle contains the signed APT snapshot and keyring,
+VINS Debian versions and owns the versioned `/usr/share/ivins/activate.sh`
+product-integration hook. The bundle contains the signed APT snapshot and keyring,
 component/meta `.deb` files, root manifest, installer, `SHA256SUMS`, SBOM,
 release notes, and evidence.
 

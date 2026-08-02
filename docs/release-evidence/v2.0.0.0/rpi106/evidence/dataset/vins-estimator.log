@@ -1,0 +1,207 @@
+[INFO] [launch]: All log files can be found below /home/rpi/.ros/log/2026-07-28-01-53-23-234938-rpi-47222
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: [vins estimator launch] config path: /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml
+[INFO] [launch.user]: [vins estimator launch] vins path: /opt/vins/share/config_pkg/config/..
+[INFO] [launch.user]: [vins estimator launch] support path: /opt/vins/share/config_pkg/support_files
+[INFO] [vins_estimator-1]: process started with pid [47234]
+[vins_estimator-1] VINS-MONO ROS 2 1.0.3.0 (v1_00_03_00)
+[vins_estimator-1] [0m[INFO] [1785203603.465352742] [vins_estimator.vins_estimator]: VINS-MONO ROS 2 version=1.0.3.0 release=v1_00_03_00[0m
+[vins_estimator-1] [0m[INFO] [1785203603.465493724] [vins_estimator.vins_estimator]: Logging configured: level=INFO, period_ms=2000[0m
+[vins_estimator-1] [0m[INFO] [1785203603.465572984] [vins_estimator.vins_estimator]: Loaded config_file: /opt/vins/share/config_pkg/config/euroc/euroc_config.yaml[0m
+[vins_estimator-1] [0m[INFO] [1785203603.466695288] [vins_estimator.vins_estimator]: result path /tmp/vins_output//vins_result_no_loop.csv[0m
+[vins_estimator-1] [0m[INFO] [1785203603.466813714] [vins_estimator.vins_estimator]: ROW: 480.000000 COL: 640.000000 [0m
+[vins_estimator-1] [33m[WARN] [1785203603.466850641] [vins_estimator.vins_estimator]:  fix extrinsic param [0m
+[vins_estimator-1] [0m[INFO] [1785203603.467602312] [vins_estimator.vins_estimator]: Extrinsic_R :
+[vins_estimator-1]    0.999112 -0.00526973   -0.041801
+[vins_estimator-1]  0.00576544    0.999914    0.011747
+[vins_estimator-1]   0.0417355  -0.0119776    0.999057[0m
+[vins_estimator-1] [0m[INFO] [1785203603.467655331] [vins_estimator.vins_estimator]: Extrinsic_T :
+[vins_estimator-1]  -0.0203753 -0.00506978    0.137592[0m
+[vins_estimator-1] [0m[INFO] [1785203603.467685757] [vins_estimator.vins_estimator]: Unsynchronized sensors, online estimate time offset, initial td: 0[0m
+[vins_estimator-1] [0m[INFO] [1785203603.467718350] [vins_estimator.vins_estimator]: [STATE BEGIN] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203603.483139230] [vins_estimator.vins_estimator]: state=WAITING imu_status=MISSING imu_messages=0 camera_status=MISSING camera_feature_messages=0[0m
+[vins_estimator-1] [0m[INFO] [1785203607.467901048] [vins_estimator.vins_estimator]: state=WAITING imu_status=MISSING imu_messages=0 camera_status=MISSING camera_feature_messages=0[0m
+[vins_estimator-1] [0m[INFO] [1785203609.472853672] [vins_estimator.vins_estimator]: state=INITIALIZING frames=10/10 feat=240 ms=0.5 imu=LOW_EXCITATION vision=LOW_MOTION[0m
+[vins_estimator-1] [0m[INFO] [1785203611.512036190] [vins_estimator.vins_estimator]: state=INITIALIZING frames=10/10 feat=240 ms=0.3 imu=LOW_EXCITATION vision=LOW_MOTION[0m
+[vins_estimator-1] [0m[INFO] [1785203613.512886493] [vins_estimator.vins_estimator]: state=INITIALIZING frames=10/10 feat=239 ms=0.3 imu=LOW_EXCITATION vision=LOW_MOTION[0m
+[vins_estimator-1] [33m[WARN] [1785203615.213524928] []: Unstable feature tracking; move the device slowly.[0m
+[vins_estimator-1] [0m[INFO] [1785203615.690826318] [vins_estimator.vins_estimator]: [STATE END] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203615.690927467] [vins_estimator.vins_estimator]: [STATE BEGIN] TRACKING[0m
+[vins_estimator-1] [0m[INFO] [1785203615.690946578] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED BEGIN ==========[0m
+[vins_estimator-1] [0m[INFO] [1785203615.690990894] [vins_estimator.vins_estimator]: initialization_stage=FINAL_NON_LINEAR[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691002079] [vins_estimator.vins_estimator]: window_frames=10/10[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691014412] [vins_estimator.vins_estimator]: tracked_features=31[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691028838] [vins_estimator.vins_estimator]: metric_scale=0.066376272[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691045394] [vins_estimator.vins_estimator]: imu_excitation=0.544241505[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691056320] [vins_estimator.vins_estimator]: visual_parallax_px=39.172088[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691072227] [vins_estimator.vins_estimator]: gravity_before_alignment_xyz=[-2.010175 0.764406 -9.567826][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691091468] [vins_estimator.vins_estimator]: initial_alignment_ypr_deg=[-0.550547 -2.842017 -178.379093][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691109579] [vins_estimator.vins_estimator]: position_xyz=[0.043966 0.031656 0.118341][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691125617] [vins_estimator.vins_estimator]: orientation_ypr_deg=[-2.837794 8.067611 170.115742][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691142506] [vins_estimator.vins_estimator]: velocity_xyz=[0.260942 0.211315 0.753984][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691159746] [vins_estimator.vins_estimator]: accelerometer_bias_xyz=[1.058535 -0.153113 -1.010206][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691175080] [vins_estimator.vins_estimator]: gyroscope_bias_xyz=[0.052978 0.113950 -0.022998][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691190710] [vins_estimator.vins_estimator]: gravity_xyz=[-0.000000 -0.000000 9.806550][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691208006] [vins_estimator.vins_estimator]: time_offset=0.014083133[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691223988] [vins_estimator.vins_estimator]: time_offset_estimation_mode=1[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691243043] [vins_estimator.vins_estimator]: triangulated_features=201[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691257173] [vins_estimator.vins_estimator]: valid_depth_features=201[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691269229] [vins_estimator.vins_estimator]: feature_depth_mean=0.268295[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691284229] [vins_estimator.vins_estimator]: feature_depth_range=[0.001749 2.427367][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691300636] [vins_estimator.vins_estimator]: camera_count=1[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691314655] [vins_estimator.vins_estimator]: extrinsic_estimation_mode=0[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691328322] [vins_estimator.vins_estimator]: extrinsic_source=CONFIGURED_FIXED[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691342822] [vins_estimator.vins_estimator]: camera[0].extrinsic_translation_xyz=[-0.020375 -0.005070 0.137592][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691363377] [vins_estimator.vins_estimator]: camera[0].extrinsic_orientation_ypr_deg=[0.330625 -2.391964 -0.686881][0m
+[vins_estimator-1] [0m[INFO] [1785203615.691379192] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED END ============[0m
+[vins_estimator-1] [0m[INFO] [1785203615.691414785] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.04 0.03 0.12] ypr=[-2.84 8.07 170.12] vel=[0.26 0.21 0.75] feat=31 td=0.0141 ms=480.5[0m
+[vins_estimator-1] [0m[INFO] [1785203617.699077191] [vins_estimator.vins_estimator]: state=TRACKING pos=[21.57 0.41 3.19] ypr=[-5.62 35.68 171.47] vel=[13.79 -0.97 0.04] feat=176 td=0.0064 ms=52.4[0m
+[vins_estimator-1] [31m[ERROR] [1785203617.858768984] []: Critical accelerometer bias estimate: 2.509936[0m
+[vins_estimator-1] [31m[ERROR] [1785203617.858851558] []: Estimator failure detected.[0m
+[vins_estimator-1] [33m[WARN] [1785203617.860343920] []: Estimator state was reset after failure.[0m
+[vins_estimator-1] [0m[INFO] [1785203617.860405846] [vins_estimator.vins_estimator]: [STATE END] TRACKING[0m
+[vins_estimator-1] [0m[INFO] [1785203617.860452958] [vins_estimator.vins_estimator]: [STATE BEGIN] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177187600] [vins_estimator.vins_estimator]: [STATE END] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177260193] [vins_estimator.vins_estimator]: [STATE BEGIN] TRACKING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177282934] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED BEGIN ==========[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177296119] [vins_estimator.vins_estimator]: initialization_stage=FINAL_NON_LINEAR[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177306749] [vins_estimator.vins_estimator]: window_frames=10/10[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177316879] [vins_estimator.vins_estimator]: tracked_features=84[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177328268] [vins_estimator.vins_estimator]: metric_scale=0.124870221[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177345212] [vins_estimator.vins_estimator]: imu_excitation=1.878695450[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177358083] [vins_estimator.vins_estimator]: visual_parallax_px=66.377281[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177372601] [vins_estimator.vins_estimator]: gravity_before_alignment_xyz=[-0.995997 1.003236 -9.704119][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177390564] [vins_estimator.vins_estimator]: initial_alignment_ypr_deg=[0.547640 3.477066 174.822004][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177405102] [vins_estimator.vins_estimator]: position_xyz=[-0.068074 0.117920 0.227722][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177418731] [vins_estimator.vins_estimator]: orientation_ypr_deg=[8.006501 -18.526962 156.279651][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177434509] [vins_estimator.vins_estimator]: velocity_xyz=[-0.112404 0.135124 0.297791][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177449750] [vins_estimator.vins_estimator]: accelerometer_bias_xyz=[-2.692316 -3.601303 -0.978487][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177462787] [vins_estimator.vins_estimator]: gyroscope_bias_xyz=[-0.018108 -0.025277 0.003917][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177477417] [vins_estimator.vins_estimator]: gravity_xyz=[-0.000000 -0.000000 9.806550][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177491954] [vins_estimator.vins_estimator]: time_offset=0.001039040[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177504658] [vins_estimator.vins_estimator]: time_offset_estimation_mode=1[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177527732] [vins_estimator.vins_estimator]: triangulated_features=353[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177540621] [vins_estimator.vins_estimator]: valid_depth_features=327[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177551862] [vins_estimator.vins_estimator]: feature_depth_mean=0.916642[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177563880] [vins_estimator.vins_estimator]: feature_depth_range=[0.615982 8.092890][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177575788] [vins_estimator.vins_estimator]: camera_count=1[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177587121] [vins_estimator.vins_estimator]: extrinsic_estimation_mode=0[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177598399] [vins_estimator.vins_estimator]: extrinsic_source=CONFIGURED_FIXED[0m
+[vins_estimator-1] [0m[INFO] [1785203618.177609788] [vins_estimator.vins_estimator]: camera[0].extrinsic_translation_xyz=[-0.020375 -0.005070 0.137592][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177625399] [vins_estimator.vins_estimator]: camera[0].extrinsic_orientation_ypr_deg=[0.330625 -2.391964 -0.686881][0m
+[vins_estimator-1] [0m[INFO] [1785203618.177640159] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED END ============[0m
+[vins_estimator-1] [31m[ERROR] [1785203618.238641468] []: Critical accelerometer bias estimate: 3.021874[0m
+[vins_estimator-1] [31m[ERROR] [1785203618.238764024] []: Estimator failure detected.[0m
+[vins_estimator-1] [33m[WARN] [1785203618.242446123] []: Estimator state was reset after failure.[0m
+[vins_estimator-1] [0m[INFO] [1785203618.242516567] [vins_estimator.vins_estimator]: [STATE END] TRACKING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.242573216] [vins_estimator.vins_estimator]: [STATE BEGIN] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667382107] [vins_estimator.vins_estimator]: [STATE END] INITIALIZING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667456422] [vins_estimator.vins_estimator]: [STATE BEGIN] TRACKING[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667475978] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED BEGIN ==========[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667486978] [vins_estimator.vins_estimator]: initialization_stage=FINAL_NON_LINEAR[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667496718] [vins_estimator.vins_estimator]: window_frames=10/10[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667506959] [vins_estimator.vins_estimator]: tracked_features=166[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667516256] [vins_estimator.vins_estimator]: metric_scale=0.143769927[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667533756] [vins_estimator.vins_estimator]: imu_excitation=1.873971122[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667577923] [vins_estimator.vins_estimator]: visual_parallax_px=82.348497[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667592293] [vins_estimator.vins_estimator]: gravity_before_alignment_xyz=[-0.059616 1.013050 -9.753902][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667608460] [vins_estimator.vins_estimator]: initial_alignment_ypr_deg=[0.548080 -2.003375 174.742525][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667623942] [vins_estimator.vins_estimator]: position_xyz=[0.016874 -0.118432 -0.420258][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667636682] [vins_estimator.vins_estimator]: orientation_ypr_deg=[-6.623886 -4.343317 172.161150][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667648831] [vins_estimator.vins_estimator]: velocity_xyz=[-0.017547 -0.024397 -0.109632][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667661423] [vins_estimator.vins_estimator]: accelerometer_bias_xyz=[-1.047166 -1.154212 -0.129757][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667675071] [vins_estimator.vins_estimator]: gyroscope_bias_xyz=[-0.008335 -0.007483 0.009057][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667687627] [vins_estimator.vins_estimator]: gravity_xyz=[-0.000000 -0.000000 9.806550][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667702053] [vins_estimator.vins_estimator]: time_offset=0.001754627[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667714683] [vins_estimator.vins_estimator]: time_offset_estimation_mode=1[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667734053] [vins_estimator.vins_estimator]: triangulated_features=284[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667746442] [vins_estimator.vins_estimator]: valid_depth_features=266[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667758202] [vins_estimator.vins_estimator]: feature_depth_mean=0.908411[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667770313] [vins_estimator.vins_estimator]: feature_depth_range=[0.508993 1.184392][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667783868] [vins_estimator.vins_estimator]: camera_count=1[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667795683] [vins_estimator.vins_estimator]: extrinsic_estimation_mode=0[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667808758] [vins_estimator.vins_estimator]: extrinsic_source=CONFIGURED_FIXED[0m
+[vins_estimator-1] [0m[INFO] [1785203618.667820387] [vins_estimator.vins_estimator]: camera[0].extrinsic_translation_xyz=[-0.020375 -0.005070 0.137592][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667835517] [vins_estimator.vins_estimator]: camera[0].extrinsic_orientation_ypr_deg=[0.330625 -2.391964 -0.686881][0m
+[vins_estimator-1] [0m[INFO] [1785203618.667848869] [vins_estimator.vins_estimator]: ========== INITIALIZATION COMPLETED END ============[0m
+[vins_estimator-1] [0m[INFO] [1785203619.742719816] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.12 -0.61] ypr=[-5.76 0.40 171.88] vel=[0.05 -0.05 -0.41] feat=125 td=0.0014 ms=45.2[0m
+[vins_estimator-1] [0m[INFO] [1785203621.777876646] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.17 -0.84] ypr=[-3.90 -6.57 174.83] vel=[-0.01 -0.01 -0.00] feat=213 td=0.0013 ms=18.0[0m
+[vins_estimator-1] [0m[INFO] [1785203623.817283783] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.17 -0.84] ypr=[-3.89 -6.68 174.12] vel=[-0.00 -0.00 0.01] feat=214 td=0.0013 ms=18.3[0m
+[vins_estimator-1] [0m[INFO] [1785203625.818946599] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.16 -0.84] ypr=[-4.25 -5.89 175.34] vel=[0.00 -0.01 -0.00] feat=212 td=0.0013 ms=18.8[0m
+[vins_estimator-1] [0m[INFO] [1785203627.858071311] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.16 -0.84] ypr=[-4.25 -5.89 175.34] vel=[0.00 -0.01 0.00] feat=215 td=0.0013 ms=18.5[0m
+[vins_estimator-1] [0m[INFO] [1785203629.898231735] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.16 -0.84] ypr=[-4.25 -5.90 175.36] vel=[0.00 -0.01 -0.00] feat=214 td=0.0013 ms=19.0[0m
+[vins_estimator-1] [0m[INFO] [1785203631.938381568] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.16 -0.84] ypr=[-4.25 -5.90 175.37] vel=[0.00 -0.01 0.00] feat=212 td=0.0013 ms=19.3[0m
+[vins_estimator-1] [0m[INFO] [1785203633.939438685] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.02 -0.16 -0.84] ypr=[-4.27 -5.87 175.35] vel=[0.01 -0.01 0.00] feat=212 td=0.0013 ms=19.6[0m
+[vins_estimator-1] [0m[INFO] [1785203635.960985511] [vins_estimator.vins_estimator]: state=TRACKING pos=[-0.01 -0.16 -0.71] ypr=[-9.17 -10.63 172.69] vel=[-0.23 0.02 0.42] feat=28 td=0.0013 ms=26.3[0m
+[vins_estimator-1] [0m[INFO] [1785203638.001767613] [vins_estimator.vins_estimator]: state=TRACKING pos=[-3.20 4.07 2.08] ypr=[22.76 3.11 162.47] vel=[-1.68 3.91 0.90] feat=139 td=0.0018 ms=48.7[0m
+[vins_estimator-1] [0m[INFO] [1785203640.012135666] [vins_estimator.vins_estimator]: state=TRACKING pos=[-7.18 21.55 5.08] ypr=[25.44 10.65 178.13] vel=[0.44 5.09 1.00] feat=143 td=0.0019 ms=41.7[0m
+[vins_estimator-1] [0m[INFO] [1785203642.045062276] [vins_estimator.vins_estimator]: state=TRACKING pos=[-6.14 36.15 8.77] ypr=[15.04 6.31 178.32] vel=[0.16 4.13 1.15] feat=191 td=0.0020 ms=57.5[0m
+[vins_estimator-1] [0m[INFO] [1785203644.045681475] [vins_estimator.vins_estimator]: state=TRACKING pos=[-4.42 46.35 10.46] ypr=[22.88 -1.37 178.49] vel=[0.85 3.38 0.03] feat=193 td=0.0023 ms=57.4[0m
+[vins_estimator-1] [0m[INFO] [1785203646.075703552] [vins_estimator.vins_estimator]: state=TRACKING pos=[-3.99 53.54 9.42] ypr=[22.74 7.36 -179.39] vel=[0.36 2.56 0.13] feat=209 td=0.0025 ms=67.0[0m
+[vins_estimator-1] [0m[INFO] [1785203648.146018021] [vins_estimator.vins_estimator]: state=TRACKING pos=[-2.58 59.51 11.94] ypr=[-3.81 -3.98 -173.84] vel=[0.25 1.21 1.29] feat=217 td=0.0025 ms=76.2[0m
+[vins_estimator-1] [0m[INFO] [1785203650.151015274] [vins_estimator.vins_estimator]: state=TRACKING pos=[-4.27 60.02 13.24] ypr=[3.03 7.82 -178.61] vel=[-0.29 -0.47 -0.09] feat=237 td=0.0025 ms=31.9[0m
+[vins_estimator-1] [0m[INFO] [1785203652.178642805] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.82 57.24 12.22] ypr=[-2.77 22.30 175.33] vel=[6.41 -0.41 0.08] feat=13 td=0.0022 ms=62.4[0m
+[vins_estimator-1] [0m[INFO] [1785203654.182742428] [vins_estimator.vins_estimator]: state=TRACKING pos=[14.65 58.91 13.78] ypr=[6.86 0.29 175.84] vel=[0.57 1.87 1.13] feat=221 td=0.0021 ms=64.0[0m
+[vins_estimator-1] [0m[INFO] [1785203656.201559315] [vins_estimator.vins_estimator]: state=TRACKING pos=[16.00 65.45 16.88] ypr=[29.81 6.59 176.64] vel=[0.34 3.04 1.27] feat=210 td=0.0021 ms=46.2[0m
+[vins_estimator-1] [0m[INFO] [1785203658.235464598] [vins_estimator.vins_estimator]: state=TRACKING pos=[16.29 75.90 20.27] ypr=[79.26 5.33 -173.77] vel=[-0.07 3.63 0.77] feat=215 td=0.0020 ms=36.6[0m
+[vins_estimator-1] [0m[INFO] [1785203660.263525957] [vins_estimator.vins_estimator]: state=TRACKING pos=[13.30 83.39 16.79] ypr=[75.55 -12.57 -167.52] vel=[-1.98 0.15 -2.36] feat=212 td=0.0021 ms=46.4[0m
+[vins_estimator-1] [0m[INFO] [1785203662.276487796] [vins_estimator.vins_estimator]: state=TRACKING pos=[12.26 82.91 15.52] ypr=[88.28 2.44 -178.38] vel=[0.17 0.80 0.75] feat=211 td=0.0021 ms=66.5[0m
+[vins_estimator-1] [0m[INFO] [1785203664.313915424] [vins_estimator.vins_estimator]: state=TRACKING pos=[7.47 84.92 18.67] ypr=[96.37 -6.92 -173.70] vel=[-2.37 -0.23 0.77] feat=229 td=0.0021 ms=60.2[0m
+[vins_estimator-1] [0m[INFO] [1785203666.344317955] [vins_estimator.vins_estimator]: state=TRACKING pos=[3.47 82.99 20.47] ypr=[100.03 0.12 -165.72] vel=[0.16 -0.09 0.33] feat=224 td=0.0021 ms=31.6[0m
+[vins_estimator-1] [0m[INFO] [1785203668.374605432] [vins_estimator.vins_estimator]: state=TRACKING pos=[3.34 83.88 20.00] ypr=[100.85 -5.24 -170.98] vel=[-0.25 0.11 -0.67] feat=231 td=0.0021 ms=38.4[0m
+[vins_estimator-1] [0m[INFO] [1785203670.393347208] [vins_estimator.vins_estimator]: state=TRACKING pos=[3.47 83.75 17.10] ypr=[103.21 -4.04 -172.18] vel=[0.05 0.07 -1.04] feat=226 td=0.0021 ms=35.3[0m
+[vins_estimator-1] [0m[INFO] [1785203672.394090355] [vins_estimator.vins_estimator]: state=TRACKING pos=[3.64 83.73 16.69] ypr=[105.81 -3.32 -173.69] vel=[0.07 0.06 0.80] feat=232 td=0.0021 ms=63.5[0m
+[vins_estimator-1] [0m[INFO] [1785203674.394765893] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.57 84.11 18.63] ypr=[21.67 6.78 -175.98] vel=[-1.44 -0.28 0.85] feat=205 td=0.0021 ms=73.6[0m
+[vins_estimator-1] [0m[INFO] [1785203676.452690243] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.57 83.67 19.83] ypr=[-0.63 9.46 177.13] vel=[0.98 0.24 -0.13] feat=229 td=0.0021 ms=60.2[0m
+[vins_estimator-1] [0m[INFO] [1785203678.466998375] [vins_estimator.vins_estimator]: state=TRACKING pos=[6.96 84.48 18.32] ypr=[-1.76 11.57 -177.80] vel=[2.85 -0.48 -0.54] feat=226 td=0.0021 ms=29.6[0m
+[vins_estimator-1] [0m[INFO] [1785203680.503606596] [vins_estimator.vins_estimator]: state=TRACKING pos=[17.41 81.50 19.07] ypr=[-1.99 8.81 179.96] vel=[3.83 -1.23 0.87] feat=207 td=0.0021 ms=57.1[0m
+[vins_estimator-1] [0m[INFO] [1785203682.518624980] [vins_estimator.vins_estimator]: state=TRACKING pos=[29.27 77.28 20.80] ypr=[-3.07 -6.32 -177.27] vel=[2.37 -1.47 0.10] feat=219 td=0.0021 ms=32.9[0m
+[vins_estimator-1] [0m[INFO] [1785203684.552980600] [vins_estimator.vins_estimator]: state=TRACKING pos=[31.74 67.59 18.41] ypr=[-4.83 0.47 -169.75] vel=[-0.27 -4.70 -1.01] feat=221 td=0.0022 ms=60.4[0m
+[vins_estimator-1] [0m[INFO] [1785203686.605508969] [vins_estimator.vins_estimator]: state=TRACKING pos=[20.62 53.21 17.63] ypr=[4.14 2.74 172.50] vel=[-4.70 -0.57 0.63] feat=218 td=0.0022 ms=58.6[0m
+[vins_estimator-1] [0m[INFO] [1785203688.620624474] [vins_estimator.vins_estimator]: state=TRACKING pos=[8.30 57.13 19.85] ypr=[-0.93 -1.13 171.84] vel=[-4.24 2.55 0.56] feat=220 td=0.0022 ms=35.3[0m
+[vins_estimator-1] [0m[INFO] [1785203690.659994822] [vins_estimator.vins_estimator]: state=TRACKING pos=[-3.47 66.79 20.37] ypr=[-0.33 -3.63 169.23] vel=[-4.54 4.57 -0.19] feat=214 td=0.0022 ms=65.5[0m
+[vins_estimator-1] [0m[INFO] [1785203692.669968191] [vins_estimator.vins_estimator]: state=TRACKING pos=[-17.76 79.44 19.44] ypr=[-0.68 12.44 174.08] vel=[-4.38 3.05 -0.39] feat=209 td=0.0022 ms=43.4[0m
+[vins_estimator-1] [0m[INFO] [1785203694.725591056] [vins_estimator.vins_estimator]: state=TRACKING pos=[-22.44 91.45 19.00] ypr=[-1.22 15.88 172.52] vel=[1.08 4.96 0.14] feat=212 td=0.0022 ms=60.4[0m
+[vins_estimator-1] [0m[INFO] [1785203696.725777260] [vins_estimator.vins_estimator]: state=TRACKING pos=[-15.18 105.56 19.87] ypr=[-0.31 17.57 172.10] vel=[4.07 5.43 0.33] feat=210 td=0.0023 ms=61.8[0m
+[vins_estimator-1] [0m[INFO] [1785203698.788337064] [vins_estimator.vins_estimator]: state=TRACKING pos=[-1.43 120.31 20.74] ypr=[4.05 15.35 176.04] vel=[5.75 5.36 0.28] feat=194 td=0.0023 ms=63.7[0m
+[vins_estimator-1] [0m[INFO] [1785203700.836198464] [vins_estimator.vins_estimator]: state=TRACKING pos=[7.47 126.73 17.40] ypr=[-5.92 2.07 -163.23] vel=[-0.14 -3.32 -1.60] feat=223 td=0.0023 ms=66.6[0m
+[vins_estimator-1] [0m[INFO] [1785203702.870239596] [vins_estimator.vins_estimator]: state=TRACKING pos=[5.35 109.62 17.70] ypr=[6.36 2.21 -162.36] vel=[-0.76 -8.96 1.57] feat=130 td=0.0023 ms=64.9[0m
+[vins_estimator-1] [0m[INFO] [1785203704.923830447] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.35 85.58 21.16] ypr=[3.87 1.06 -177.93] vel=[-2.67 -4.58 0.16] feat=195 td=0.0022 ms=56.1[0m
+[vins_estimator-1] [0m[INFO] [1785203706.942205767] [vins_estimator.vins_estimator]: state=TRACKING pos=[-2.50 74.06 20.86] ypr=[-3.15 10.36 -177.02] vel=[1.07 -3.31 -0.62] feat=221 td=0.0022 ms=60.4[0m
+[vins_estimator-1] [0m[INFO] [1785203708.966824537] [vins_estimator.vins_estimator]: state=TRACKING pos=[0.76 63.23 16.74] ypr=[-3.17 -11.28 -177.05] vel=[0.17 -2.39 -1.18] feat=157 td=0.0022 ms=42.2[0m
+[vins_estimator-1] [0m[INFO] [1785203710.981438138] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.53 57.49 14.99] ypr=[8.53 -2.18 -179.57] vel=[-0.15 0.05 0.05] feat=202 td=0.0021 ms=57.1[0m
+[vins_estimator-1] [0m[INFO] [1785203713.031086479] [vins_estimator.vins_estimator]: state=TRACKING pos=[-0.19 57.48 14.58] ypr=[4.27 4.44 -178.12] vel=[0.19 0.00 -0.06] feat=225 td=0.0021 ms=59.9[0m
+[vins_estimator-1] [0m[INFO] [1785203715.032354265] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.01 57.37 14.40] ypr=[3.85 11.27 179.13] vel=[1.29 -0.02 -0.04] feat=236 td=0.0021 ms=64.3[0m
+[vins_estimator-1] [0m[INFO] [1785203717.036548166] [vins_estimator.vins_estimator]: state=TRACKING pos=[4.85 57.51 16.14] ypr=[3.61 2.26 -179.44] vel=[0.07 -0.01 0.20] feat=227 td=0.0022 ms=70.8[0m
+[vins_estimator-1] [0m[INFO] [1785203719.079443441] [vins_estimator.vins_estimator]: state=TRACKING pos=[3.68 57.50 16.10] ypr=[1.52 5.44 179.95] vel=[-1.28 -0.07 -0.10] feat=218 td=0.0022 ms=62.9[0m
+[vins_estimator-1] [0m[INFO] [1785203721.099040428] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.09 57.61 16.51] ypr=[1.95 3.04 -179.76] vel=[0.07 -0.10 0.10] feat=218 td=0.0022 ms=34.6[0m
+[vins_estimator-1] [0m[INFO] [1785203723.135530339] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.07 57.47 15.03] ypr=[3.68 3.76 -179.32] vel=[-0.06 0.05 -0.90] feat=234 td=0.0022 ms=36.5[0m
+[vins_estimator-1] [0m[INFO] [1785203725.183245509] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.11 57.41 15.83] ypr=[-0.05 3.87 179.08] vel=[-0.05 0.03 0.86] feat=233 td=0.0022 ms=67.8[0m
+[vins_estimator-1] [0m[INFO] [1785203727.200711349] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.06 57.53 17.69] ypr=[-0.36 3.86 -179.54] vel=[-0.10 0.03 0.25] feat=235 td=0.0022 ms=33.9[0m
+[vins_estimator-1] [0m[INFO] [1785203729.237286236] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.05 57.41 17.40] ypr=[-0.82 3.16 179.95] vel=[0.04 -0.01 -0.50] feat=236 td=0.0022 ms=46.0[0m
+[vins_estimator-1] [0m[INFO] [1785203731.263944883] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.14 57.61 15.88] ypr=[-5.53 1.65 -176.50] vel=[-0.01 -0.16 -0.22] feat=223 td=0.0022 ms=40.0[0m
+[vins_estimator-1] [0m[INFO] [1785203733.279644318] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.13 57.38 15.16] ypr=[-1.73 3.82 -178.33] vel=[0.08 0.12 0.39] feat=235 td=0.0022 ms=70.5[0m
+[vins_estimator-1] [0m[INFO] [1785203735.320942323] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.83 57.51 19.07] ypr=[0.15 6.55 -177.63] vel=[-0.14 0.02 1.05] feat=230 td=0.0022 ms=69.6[0m
+[vins_estimator-1] [0m[INFO] [1785203737.331331550] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.11 57.46 20.70] ypr=[-0.69 2.68 -179.96] vel=[0.14 0.17 0.35] feat=225 td=0.0022 ms=43.8[0m
+[vins_estimator-1] [0m[INFO] [1785203739.346606498] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.03 57.49 20.21] ypr=[-5.96 2.17 -177.43] vel=[-0.03 -0.07 -0.79] feat=226 td=0.0022 ms=62.7[0m
+[vins_estimator-1] [0m[INFO] [1785203741.359248360] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.09 57.34 16.35] ypr=[-1.27 2.87 -178.68] vel=[0.23 -0.04 -1.44] feat=227 td=0.0021 ms=35.0[0m
+[vins_estimator-1] [0m[INFO] [1785203743.371024889] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.98 57.43 14.60] ypr=[0.17 5.21 -178.33] vel=[-0.18 -0.05 0.86] feat=238 td=0.0021 ms=44.1[0m
+[vins_estimator-1] [0m[INFO] [1785203745.392043832] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.00 57.43 19.37] ypr=[-0.52 6.02 -178.16] vel=[0.00 0.15 1.08] feat=236 td=0.0021 ms=31.5[0m
+[vins_estimator-1] [0m[INFO] [1785203747.409476091] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.01 57.46 21.19] ypr=[-2.73 7.35 -177.77] vel=[0.09 0.05 -0.15] feat=233 td=0.0021 ms=69.2[0m
+[vins_estimator-1] [0m[INFO] [1785203749.441824039] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.10 57.36 20.01] ypr=[-0.49 6.53 -179.58] vel=[-0.01 -0.04 -0.52] feat=236 td=0.0021 ms=39.0[0m
+[vins_estimator-1] [0m[INFO] [1785203751.470264857] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.02 57.50 18.36] ypr=[1.79 5.70 -178.99] vel=[-0.04 -0.24 -0.59] feat=222 td=0.0021 ms=83.6[0m
+[vins_estimator-1] [0m[INFO] [1785203753.476137525] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.18 57.45 18.48] ypr=[0.42 2.54 -178.45] vel=[-0.16 0.07 0.65] feat=233 td=0.0021 ms=29.8[0m
+[vins_estimator-1] [0m[INFO] [1785203755.502677195] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.91 57.32 19.44] ypr=[0.59 5.90 179.25] vel=[0.10 -0.09 -0.12] feat=222 td=0.0022 ms=70.1[0m
+[vins_estimator-1] [0m[INFO] [1785203757.504978370] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.03 57.49 18.39] ypr=[0.89 5.87 -178.68] vel=[-0.06 -0.04 -0.38] feat=236 td=0.0022 ms=39.7[0m
+[vins_estimator-1] [0m[INFO] [1785203759.517116908] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.98 57.35 17.68] ypr=[1.48 6.98 179.45] vel=[0.05 -0.11 0.01] feat=238 td=0.0022 ms=39.4[0m
+[vins_estimator-1] [0m[INFO] [1785203761.525655651] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.01 57.38 17.66] ypr=[4.05 3.27 179.14] vel=[-0.08 -0.07 -0.16] feat=229 td=0.0022 ms=60.3[0m
+[vins_estimator-1] [0m[INFO] [1785203763.556854519] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.07 57.56 16.60] ypr=[-0.83 3.69 -176.77] vel=[-0.02 -0.03 -0.46] feat=233 td=0.0022 ms=58.3[0m
+[vins_estimator-1] [0m[INFO] [1785203765.574752775] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.26 57.59 15.76] ypr=[-2.31 3.43 -178.47] vel=[-0.06 -0.19 -0.08] feat=223 td=0.0022 ms=43.2[0m
+[vins_estimator-1] [0m[INFO] [1785203767.591094842] [vins_estimator.vins_estimator]: state=TRACKING pos=[2.04 57.29 15.44] ypr=[0.25 4.10 -178.96] vel=[0.04 -0.28 -0.08] feat=236 td=0.0022 ms=30.7[0m
+[vins_estimator-1] [0m[INFO] [1785203769.609461686] [vins_estimator.vins_estimator]: state=TRACKING pos=[1.65 57.29 15.35] ypr=[1.98 -4.43 -177.06] vel=[-0.86 -0.22 0.03] feat=237 td=0.0022 ms=30.8[0m
+[vins_estimator-1] [0m[INFO] [1785203771.656277727] [vins_estimator.vins_estimator]: state=TRACKING pos=[-5.71 56.03 15.21] ypr=[-0.21 -0.71 -177.44] vel=[-3.65 -0.57 -0.16] feat=214 td=0.0022 ms=63.3[0m
+[vins_estimator-1] [0m[INFO] [1785203773.657464720] [vins_estimator.vins_estimator]: state=TRACKING pos=[-16.50 54.31 15.14] ypr=[1.65 -0.33 -177.56] vel=[-4.73 -0.93 0.01] feat=212 td=0.0022 ms=67.1[0m
+[vins_estimator-1] [0m[INFO] [1785203775.707748071] [vins_estimator.vins_estimator]: state=TRACKING pos=[-22.08 53.44 16.93] ypr=[-0.66 4.80 -177.70] vel=[-0.05 0.09 0.19] feat=67 td=0.0022 ms=59.8[0m
+[vins_estimator-1] [0m[INFO] [1785203777.721790524] [vins_estimator.vins_estimator]: state=TRACKING pos=[-22.29 46.55 17.00] ypr=[-2.03 16.37 -179.50] vel=[1.59 -3.26 0.29] feat=139 td=0.0021 ms=28.4[0m
+[vins_estimator-1] [0m[INFO] [1785203779.731494364] [vins_estimator.vins_estimator]: state=TRACKING pos=[-12.37 42.28 18.04] ypr=[1.80 17.82 -177.22] vel=[4.16 -0.79 0.26] feat=208 td=0.0021 ms=56.2[0m
+[vins_estimator-1] [0m[INFO] [1785203781.734861487] [vins_estimator.vins_estimator]: state=TRACKING pos=[-4.53 39.51 17.42] ypr=[-4.77 4.51 -175.88] vel=[-0.11 -1.51 -1.03] feat=167 td=0.0021 ms=50.5[0m

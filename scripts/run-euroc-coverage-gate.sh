@@ -8,36 +8,50 @@ bag="$(realpath "$bag")"
 output="$(realpath "$output")"
 
 set +u
-source /opt/iros2_0/jazzy/setup.bash
+source /opt/iros2j/setup.bash
+source /opt/imavros/setup.bash
 source /opt/vins/setup.bash
 set -u
+export RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}"
+command -v setsid >/dev/null
 
-pids=()
+process_groups=()
 cleanup() {
-  for pid in "${pids[@]}"; do
-    kill -INT "$pid" 2>/dev/null || true
+  for pgid in "${process_groups[@]}"; do
+    kill -INT -- "-$pgid" 2>/dev/null || true
   done
-  wait "${pids[@]}" 2>/dev/null || true
+  for _ in $(seq 1 50); do
+    remaining=0
+    for pgid in "${process_groups[@]}"; do
+      kill -0 -- "-$pgid" 2>/dev/null && remaining=1 || true
+    done
+    (( remaining == 0 )) && break
+    sleep 0.1
+  done
+  for pgid in "${process_groups[@]}"; do
+    kill -TERM -- "-$pgid" 2>/dev/null || true
+  done
+  wait "${process_groups[@]}" 2>/dev/null || true
 }
 trap cleanup EXIT INT TERM
 
-ros2 launch feature_tracker vins_feature_tracker.launch.py \
+setsid ros2 launch feature_tracker vins_feature_tracker.launch.py \
   >"$output/feature-tracker.log" 2>&1 &
-pids+=("$!")
-ros2 launch vins_estimator euroc.launch.py \
+process_groups+=("$!")
+setsid ros2 launch vins_estimator euroc.launch.py \
   >"$output/vins-estimator.log" 2>&1 &
-pids+=("$!")
+process_groups+=("$!")
 sleep 8
 
-ros2 bag record --output "$output/coordinates" \
+setsid ros2 bag record --output "$output/coordinates" \
   /vins_estimator/odometry >"$output/record.log" 2>&1 &
 record_pid=$!
-pids+=("$record_pid")
+process_groups+=("$record_pid")
 sleep 2
 
 ros2 bag play "$bag" >"$output/play.log" 2>&1
 sleep 5
-kill -INT "$record_pid" 2>/dev/null || true
+kill -INT -- "-$record_pid" 2>/dev/null || true
 wait "$record_pid" || true
 
 ros2 bag info "$output/coordinates" >"$output/coordinates-info.txt"

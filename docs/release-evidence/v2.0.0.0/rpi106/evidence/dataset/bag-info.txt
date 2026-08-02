@@ -1,0 +1,13 @@
+
+Files:             data_ros2.db3
+Bag size:          2.5 GiB
+Storage id:        sqlite3
+ROS Distro:        rosbags
+Duration:          348.990715052s
+Start:             Jul 11 2026 22:34:56.005520543 (1783809296.005520543)
+End:               Jul 11 2026 22:40:44.996235595 (1783809644.996235595)
+Messages:          43501
+Topic information: Topic: /cam0/image_raw | Type: sensor_msgs/msg/Image | Count: 8725 | Serialization Format: cdr
+                   Topic: /imu0 | Type: sensor_msgs/msg/Imu | Count: 34776 | Serialization Format: cdr
+Service:           0
+Service information:

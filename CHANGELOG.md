@@ -2,6 +2,39 @@
 
 All notable product-level changes to iVINS are documented in this file.
 
+## Process [2.1.0] - Unreleased
+
+### Added
+
+- Added a versioned iVINS product activation hook that supplies immutable
+  iROS2j 1.0.3 OGRE loader compatibility before activating iMAVROS and VINS.
+
+## [2.0.0.0] - Unreleased
+
+### Added
+
+- Added a draft schema-v2 product manifest for the immutable iROS2j 1.0.3,
+  iMAVROS 1.0.0.2, and VINS-NEO 1.0.3.0 component matrix.
+- Recorded the signed iROS2j APT snapshot, signing-key fingerprint, signed
+  repository metadata, exact package selection, component artifacts, hashes,
+  activation order, and release-gate placeholders.
+
+### Changed
+
+- Bumped the process version to 2.0.0 for the incompatible root-manifest
+  schema change. Schema v1 remains supported exclusively for historical
+  iVINS 1.0.0.0 validation.
+
+### Release status
+
+- Draft and blocked. The meta-package, signed offline bundle, clean offline
+  reinstall, controlled dataset, configured FCU, and OV5647 gates passed on
+  `rpi@192.168.144.106`.
+- The iVINS-owned activation hook resolves the iROS2j 1.0.3 OGRE dependency;
+  publication remains blocked by the missing OV5647/FCU-specific VINS
+  calibration and the available `camera_ros` workspace's legacy
+  `/opt/iros2_0/jazzy` underlay reference.
+
 ## Process [1.1.0] - 2026-07-28
 
 ### Changed

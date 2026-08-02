@@ -15,19 +15,13 @@ def projection(manifest: dict[str, Any]) -> dict[str, Any]:
     result["release"]["status"] = "build-input"
     result["artifacts"]["meta_package"]["sha256"] = None
     result["artifacts"]["offline_bundle"]["sha256"] = None
-    result["gates"] = {
-        "metadata": None,
-        "component_native": {
-            "iros2": None,
-            "imavros": None,
-            "vins": None,
-        },
-        "package_audit": None,
-        "clean_install": None,
-        "ros_smoke": None,
-        "dataset": None,
-        "post_release": None,
-    }
+
+    def clear_evidence(value: Any) -> Any:
+        if isinstance(value, dict):
+            return {key: clear_evidence(item) for key, item in value.items()}
+        return None
+
+    result["gates"] = clear_evidence(result["gates"])
     return result
 
 

@@ -25,15 +25,22 @@ def main() -> int:
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
 
-    entries = list(manifest["components"].values()) + [
+    binary_entries = [
+        manifest["components"][name]
+        for name in ("imavros", "vins")
+        if name in manifest["components"]
+    ] + [
         {
             "package": manifest["artifacts"]["meta_package"]["package"],
             "debian_version": manifest["release"]["debian_version"],
             "artifact": manifest["artifacts"]["meta_package"],
         }
     ]
+    if manifest["schema_version"] == 1:
+        binary_entries.insert(0, manifest["components"]["iros2"])
+
     components = []
-    for entry in entries:
+    for entry in binary_entries:
         artifact = args.artifacts / entry["artifact"]["filename"]
         components.append(
             {
@@ -46,6 +53,43 @@ def main() -> int:
                 ),
                 "hashes": [{"alg": "SHA-256", "content": sha256(artifact)}],
             }
+        )
+
+    if manifest["schema_version"] == 2:
+        iros2 = manifest["components"]["iros2"]
+        apt_repository = iros2["apt_repository"]
+        apt_artifact = args.artifacts / apt_repository["filename"]
+        components.append(
+            {
+                "type": "application",
+                "name": "iros2j-apt-snapshot",
+                "version": iros2["debian_version"],
+                "purl": (
+                    "pkg:generic/iros2j-apt-snapshot@"
+                    f"{iros2['debian_version']}?arch=arm64"
+                ),
+                "hashes": [
+                    {"alg": "SHA-256", "content": sha256(apt_artifact)}
+                ],
+                "externalReferences": [
+                    {
+                        "type": "distribution",
+                        "url": apt_repository["url"],
+                    }
+                ],
+            }
+        )
+        components.extend(
+            {
+                "type": "library",
+                "name": package["name"],
+                "version": package["version"],
+                "purl": (
+                    f"pkg:deb/debian/{package['name']}@"
+                    f"{package['version']}?arch=arm64"
+                ),
+            }
+            for package in iros2["packages"]
         )
 
     document = {

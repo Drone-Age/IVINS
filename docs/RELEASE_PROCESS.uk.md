@@ -20,7 +20,9 @@ evidence.
 ## 2. Root manifest
 
 Створіть новий `manifests/ivins-<version>.json`; не змінюйте опублікований
-manifest 1.0.0.0. Нова schema повинна відрізняти:
+manifest 1.0.0.0. Наступна матриця використовує `schema_version: 2`;
+schema version 1 залишається чинною лише для перевірки історичного релізу
+1.0.0.0. Нова schema повинна відрізняти:
 
 - iROS2j APT repository artifact, SHA-256, signing-key identity,
   Release/InRelease metadata, package inventory і точні Debian versions;
@@ -63,8 +65,9 @@ Component `PASS` приймається лише для точних commit, man
 ## 5. Формування продукту
 
 Meta-package `ivins` не містить component payload. Він декларує точні
-dependencies на потрібні `iros2j-*`, точні Debian versions iMAVROS і VINS.
-Bundle містить signed APT snapshot і keyring, component/meta `.deb`, root
+dependencies на потрібні `iros2j-*`, точні Debian versions iMAVROS і VINS та
+володіє версійованим product-integration hook
+`/usr/share/ivins/activate.sh`. Bundle містить signed APT snapshot і keyring, component/meta `.deb`, root
 manifest, installer, `SHA256SUMS`, SBOM, release notes та evidence.
 
 Offline installer повинен:

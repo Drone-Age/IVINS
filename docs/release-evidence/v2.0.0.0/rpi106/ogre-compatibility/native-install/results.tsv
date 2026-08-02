@@ -1,0 +1,3 @@
+test_id	result	started_at	finished_at	host	target	command	evidence	reason	requirement_effect
+ogre_loader_compat	PASS	2026-07-28T14:42:03+00:00	2026-07-28T14:42:51+00:00	rpi	/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE/Plugin_OctreeZone.so.1.12.10	scripts/run-ogre-compat-gate.sh /home/rpi/ivins-ogre-compat.UdiFfu/evidence/native-final/ogre-gate	/home/rpi/ivins-ogre-compat.UdiFfu/evidence/native-final/ogre-gate/octree-ldd.txt		satisfied
+complete_elf_audit	PASS	2026-07-28T14:42:03+00:00	2026-07-28T14:42:51+00:00	rpi	/opt/iros2j /opt/imavros /opt/vins (435 ELF files)	scripts/run-ogre-compat-gate.sh /home/rpi/ivins-ogre-compat.UdiFfu/evidence/native-final/ogre-gate	/home/rpi/ivins-ogre-compat.UdiFfu/evidence/native-final/ogre-gate/elf-ldd-audit.txt		satisfied

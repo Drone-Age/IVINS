@@ -17,30 +17,55 @@ import json
 import sys
 
 data = json.load(open(sys.argv[1], encoding="utf-8"))
-for component in data["components"].values():
-    print(component["artifact"]["filename"])
-print(data["artifacts"]["meta_package"]["filename"])
 print(data["artifacts"]["offline_bundle"]["filename"])
+if data["schema_version"] == 1:
+    for component in data["components"].values():
+        print(f"artifact:{component['artifact']['filename']}")
+else:
+    print(f"artifact:{data['components']['iros2']['apt_repository']['filename']}")
+    print(f"artifact:{data['components']['iros2']['package_inventory']['filename']}")
+    for name in ("imavros", "vins"):
+        print(f"artifact:{data['components'][name]['artifact']['filename']}")
+for release_note in data["artifacts"].get("release_notes", []):
+    print(f"source:{release_note['source']}")
+print(f"artifact:{data['artifacts']['meta_package']['filename']}")
 PY
 )
 
-bundle="${names[4]}"
+bundle="${names[0]}"
 stage="$(mktemp -d)"
 trap 'rm -rf -- "${stage}"' EXIT
 
-for name in "${names[@]:0:4}"; do
-  test -f "${artifacts}/${name}"
-  cp -f -- "${artifacts}/${name}" "${stage}/${name}"
+bundle_names=()
+for item in "${names[@]:1}"; do
+  case "${item}" in
+    artifact:*)
+      name="${item#artifact:}"
+      test -f "${artifacts}/${name}"
+      cp -f -- "${artifacts}/${name}" "${stage}/${name}"
+      bundle_names+=("${name}")
+      ;;
+    source:*)
+      source="${item#source:}"
+      test -f "${repo_root}/${source}"
+      name="$(basename "${source}")"
+      cp -f -- "${repo_root}/${source}" "${stage}/${name}"
+      bundle_names+=("${name}")
+      ;;
+  esac
 done
 
 python3 "${repo_root}/scripts/package-manifest.py" \
   "${manifest}" "${stage}/build-manifest.json"
+python3 "${repo_root}/scripts/generate-sbom.py" \
+  "${manifest}" "${artifacts}" "${stage}/sbom.cdx.json"
 install -m 0755 "${repo_root}/packaging/install-offline.sh" \
   "${stage}/install.sh"
 
 (
   cd "${stage}"
-  sha256sum "${names[@]:0:4}" build-manifest.json install.sh > SHA256SUMS
+  sha256sum "${bundle_names[@]}" build-manifest.json sbom.cdx.json install.sh \
+    > SHA256SUMS
 )
 
 tar --sort=name --mtime='@0' --owner=0 --group=0 --numeric-owner \

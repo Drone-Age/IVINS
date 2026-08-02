@@ -17,7 +17,7 @@ VINS-NEO. Локальні правила компонентів можуть б
 | iROS2j | released signed APT snapshot; split-пакети `iros2j-*`; `/opt/iros2j`; поточний compatible baseline 1.0.3 / `v2.1.0.3` |
 | iMAVROS | released ARM64 `.deb`, зібраний проти того самого точного iROS2j snapshot; `/opt/imavros`; поточний compatible baseline 1.0.0.2 |
 | VINS-NEO | новий released ARM64 `.deb`, зібраний проти того самого iROS2j snapshot; `/opt/vins`; без приватних копій ROS dependencies |
-| iVINS | meta-package без payload, manifest, installer, evidence та offline bundle |
+| iVINS | meta-package із product-owned integration hook, manifest, installer, evidence та offline bundle |
 
 VINS-NEO 1.0.2.0 є історичним і несумісним із цією матрицею: він залежить від
 `iros2-0`, активує `/opt/iros2_0/jazzy` та вбудовує приватний `cv_bridge`.
@@ -33,7 +33,8 @@ VINS-NEO 1.0.2.0 є історичним і несумісним із цією �
 - VINS-NEO володіє лише overlay `/opt/vins` і споживає ROS dependencies з
   iROS2j. Він не повинен збирати чи постачати другий `cv_bridge`.
 - iVINS не дублює payload компонентів. Його Debian dependencies та embedded
-  manifest визначають точну installable matrix.
+  manifest визначають точну installable matrix. Він може володіти
+  product-level integration файлами в `/usr/share/ivins`.
 
 Root manifest фіксує iROS2j release tag/commit, signed APT asset URL і SHA-256,
 repository metadata/key identity, точний набір packages і Debian versions;
@@ -42,13 +43,17 @@ evidence.
 
 ## Активація середовища
 
-Нормативний clean-shell порядок:
+Нормативна product activation у clean shell:
 
 ```bash
-source /opt/iros2j/setup.bash
-source /opt/imavros/setup.bash
-source /opt/vins/setup.bash
+source /usr/share/ivins/activate.sh
 ```
+
+Версійований hook виконує source `/opt/iros2j/setup.bash`, рівно один раз
+додає `/opt/iros2j/rviz_ogre_vendor/opt/rviz_ogre_vendor/lib/OGRE` на початок
+`LD_LIBRARY_PATH`, а потім виконує source `/opt/imavros/setup.bash` і
+`/opt/vins/setup.bash`. Ця сумісність належить iVINS і не змінює immutable
+встановлення iROS2j.
 
 Усі процеси використовують вибраний `RMW_IMPLEMENTATION` (Fast DDS для
 поточного baseline), однаковий `ROS_DOMAIN_ID` і сумісні DDS discovery

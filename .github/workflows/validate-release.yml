@@ -18,4 +18,5 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/validate-release.py manifests/ivins-1.0.0.0.json
+      - run: python3 scripts/validate-release.py manifests/ivins-2.0.0.0.json
       - run: python3 -m unittest discover -s tests -v

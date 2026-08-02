@@ -1,0 +1,101 @@
+VALIDATE_HISTORICAL
+manifests/ivins-1.0.0.0.json: valid (released)
+VALIDATE_V2_ARTIFACTS
+manifests/ivins-2.0.0.0.json: valid (draft)
+UNIT_TESTS
+test_active_packaging_contract_has_no_legacy_dependency (test_release_manifest.ReleaseManifestTests.test_active_packaging_contract_has_no_legacy_dependency) ... ok
+test_build_input_projection_breaks_artifact_hash_cycle (test_release_manifest.ReleaseManifestTests.test_build_input_projection_breaks_artifact_hash_cycle) ... ok
+test_component_repository_mismatch_is_rejected (test_release_manifest.ReleaseManifestTests.test_component_repository_mismatch_is_rejected) ... ok
+test_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_draft_cannot_pass_released_gate) ... ok
+test_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_draft_manifest_is_valid) ... ok
+test_historical_manifest_bytes_are_unchanged (test_release_manifest.ReleaseManifestTests.test_historical_manifest_bytes_are_unchanged) ... ok
+test_latest_component_url_is_rejected_for_release (test_release_manifest.ReleaseManifestTests.test_latest_component_url_is_rejected_for_release) ... ok
+test_malformed_component_commit_is_rejected (test_release_manifest.ReleaseManifestTests.test_malformed_component_commit_is_rejected) ... ok
+test_openpgp_fingerprint_ignores_ascii_armor_crc (test_release_manifest.ReleaseManifestTests.test_openpgp_fingerprint_ignores_ascii_armor_crc) ... ok
+test_schema_v2_build_projection_clears_every_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_build_projection_clears_every_gate) ... ok
+test_schema_v2_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_cannot_pass_released_gate) ... ok
+test_schema_v2_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_manifest_is_valid) ... ok
+test_schema_v2_rejects_legacy_iros_contract (test_release_manifest.ReleaseManifestTests.test_schema_v2_rejects_legacy_iros_contract) ... ok
+test_schema_v2_requires_pinned_signing_identity (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_pinned_signing_identity) ... ok
+test_schema_v2_requires_released_iros_metapackages (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_released_iros_metapackages) ... ok
+test_schema_v2_versions_match_repository_metadata (test_release_manifest.ReleaseManifestTests.test_schema_v2_versions_match_repository_metadata) ... ok
+test_unapproved_component_is_rejected (test_release_manifest.ReleaseManifestTests.test_unapproved_component_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.005s
+
+OK
+BASH_SYNTAX
+BUILD_META
+manifests/ivins-2.0.0.0.json: valid (draft)
+dpkg-deb: building package 'ivins' in 'artifacts/ivins_2.0.0.0-1+deb13_arm64.deb'.
+AUDIT_META
+manifests/ivins-2.0.0.0.json: valid (draft)
+iVINS meta-package audit PASSED.
+BUILD_BUNDLE
+manifests/ivins-2.0.0.0.json: valid (draft)
+OUTPUTS
+b8795aff2b9c6a141466647740ebad6afe1c62eeb058ad9e3f39f0a892bc497b  artifacts/ivins_2.0.0.0-1+deb13_arm64.deb
+ad618a43a841db145f33286ae184ddee81ec3460eb5e8ff45ceb5a9cb61b518f  artifacts/ivins_2.0.0.0-1+deb13_arm64.tar.zst
+FINAL_NATIVE_VALIDATION
+manifests/ivins-1.0.0.0.json: valid (released)
+manifests/ivins-2.0.0.0.json: valid (draft)
+test_active_packaging_contract_has_no_legacy_dependency (test_release_manifest.ReleaseManifestTests.test_active_packaging_contract_has_no_legacy_dependency) ... ok
+test_build_input_projection_breaks_artifact_hash_cycle (test_release_manifest.ReleaseManifestTests.test_build_input_projection_breaks_artifact_hash_cycle) ... ok
+test_component_repository_mismatch_is_rejected (test_release_manifest.ReleaseManifestTests.test_component_repository_mismatch_is_rejected) ... ok
+test_dataset_gate_terminates_complete_ros_process_groups (test_release_manifest.ReleaseManifestTests.test_dataset_gate_terminates_complete_ros_process_groups) ... ok
+test_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_draft_cannot_pass_released_gate) ... ok
+test_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_draft_manifest_is_valid) ... ok
+test_historical_manifest_bytes_are_unchanged (test_release_manifest.ReleaseManifestTests.test_historical_manifest_bytes_are_unchanged) ... ok
+test_latest_component_url_is_rejected_for_release (test_release_manifest.ReleaseManifestTests.test_latest_component_url_is_rejected_for_release) ... ok
+test_malformed_component_commit_is_rejected (test_release_manifest.ReleaseManifestTests.test_malformed_component_commit_is_rejected) ... ok
+test_openpgp_fingerprint_ignores_ascii_armor_crc (test_release_manifest.ReleaseManifestTests.test_openpgp_fingerprint_ignores_ascii_armor_crc) ... ok
+test_schema_v2_build_projection_clears_every_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_build_projection_clears_every_gate) ... ok
+test_schema_v2_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_cannot_pass_released_gate) ... FAIL
+test_schema_v2_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_manifest_is_valid) ... ok
+test_schema_v2_rejects_legacy_iros_contract (test_release_manifest.ReleaseManifestTests.test_schema_v2_rejects_legacy_iros_contract) ... ok
+test_schema_v2_requires_pinned_signing_identity (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_pinned_signing_identity) ... ok
+test_schema_v2_requires_released_iros_metapackages (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_released_iros_metapackages) ... ok
+test_schema_v2_versions_match_repository_metadata (test_release_manifest.ReleaseManifestTests.test_schema_v2_versions_match_repository_metadata) ... ok
+test_unapproved_component_is_rejected (test_release_manifest.ReleaseManifestTests.test_unapproved_component_is_rejected) ... ok
+
+======================================================================
+FAIL: test_schema_v2_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_cannot_pass_released_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/ivins-issue7.MHEUei/source/tests/test_release_manifest.py", line 151, in test_schema_v2_draft_cannot_pass_released_gate
+    self.assertIn("released manifest requires gates.metadata", errors)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'released manifest requires gates.metadata' not found in ['--released requires release.status=released', 'released manifest requires meta_package URL', 'released manifest requires offline_bundle URL', 'released manifest requires gates.hardware', 'released manifest requires gates.publication', 'released manifest requires gates.post_release']
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.005s
+
+FAILED (failures=1)
+FINAL_NATIVE_VALIDATION_RETRY
+manifests/ivins-1.0.0.0.json: valid (released)
+manifests/ivins-2.0.0.0.json: valid (draft)
+test_active_packaging_contract_has_no_legacy_dependency (test_release_manifest.ReleaseManifestTests.test_active_packaging_contract_has_no_legacy_dependency) ... ok
+test_build_input_projection_breaks_artifact_hash_cycle (test_release_manifest.ReleaseManifestTests.test_build_input_projection_breaks_artifact_hash_cycle) ... ok
+test_component_repository_mismatch_is_rejected (test_release_manifest.ReleaseManifestTests.test_component_repository_mismatch_is_rejected) ... ok
+test_dataset_gate_terminates_complete_ros_process_groups (test_release_manifest.ReleaseManifestTests.test_dataset_gate_terminates_complete_ros_process_groups) ... ok
+test_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_draft_cannot_pass_released_gate) ... ok
+test_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_draft_manifest_is_valid) ... ok
+test_historical_manifest_bytes_are_unchanged (test_release_manifest.ReleaseManifestTests.test_historical_manifest_bytes_are_unchanged) ... ok
+test_latest_component_url_is_rejected_for_release (test_release_manifest.ReleaseManifestTests.test_latest_component_url_is_rejected_for_release) ... ok
+test_malformed_component_commit_is_rejected (test_release_manifest.ReleaseManifestTests.test_malformed_component_commit_is_rejected) ... ok
+test_openpgp_fingerprint_ignores_ascii_armor_crc (test_release_manifest.ReleaseManifestTests.test_openpgp_fingerprint_ignores_ascii_armor_crc) ... ok
+test_schema_v2_build_projection_clears_every_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_build_projection_clears_every_gate) ... ok
+test_schema_v2_draft_cannot_pass_released_gate (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_cannot_pass_released_gate) ... ok
+test_schema_v2_draft_manifest_is_valid (test_release_manifest.ReleaseManifestTests.test_schema_v2_draft_manifest_is_valid) ... ok
+test_schema_v2_rejects_legacy_iros_contract (test_release_manifest.ReleaseManifestTests.test_schema_v2_rejects_legacy_iros_contract) ... ok
+test_schema_v2_requires_pinned_signing_identity (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_pinned_signing_identity) ... ok
+test_schema_v2_requires_released_iros_metapackages (test_release_manifest.ReleaseManifestTests.test_schema_v2_requires_released_iros_metapackages) ... ok
+test_schema_v2_versions_match_repository_metadata (test_release_manifest.ReleaseManifestTests.test_schema_v2_versions_match_repository_metadata) ... ok
+test_unapproved_component_is_rejected (test_release_manifest.ReleaseManifestTests.test_unapproved_component_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.005s
+
+OK
+PROCESS_GROUP_CLEANUP PASS

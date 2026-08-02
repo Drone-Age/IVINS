@@ -9,3 +9,5 @@
 *.md text eol=lf
 VERSION text eol=lf
 PROCESS_VERSION text eol=lf
+packaging/control.in text eol=lf
+docs/release-evidence/** text eol=lf

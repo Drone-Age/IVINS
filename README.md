@@ -3,6 +3,15 @@
 INDRA VINS — система візуально-інерціальної навігації, що складається з
 обчислювальної платформи та програмного забезпечення.
 
+## Набори даних / Datasets
+
+- [DataSetsManager/client](https://github.com/DataSetsManager/client) — CLI,
+  конфігурації та каталог наборів даних / CLI, configurations, and dataset catalog.
+- [DataSetsManager/server](https://github.com/DataSetsManager/server) — публічний
+  Web-каталог, API та авторизовані локальні artifacts / public Web catalog, API,
+  and authenticated local artifacts.
+- [Документація й ITSM / Documentation and ITSM](https://github.com/DataSetsManager/DataSetsManager).
+
 ## Компоненти
 
 - [VINS-NEO](https://github.com/Drone-Age/VINS-NEO) — ключовий програмний
